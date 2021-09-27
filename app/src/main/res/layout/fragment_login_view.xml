@@ -55,7 +55,20 @@
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
+        <TextView
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:id="@+id/lblForgotPassword"
+            android:text="@string/lbl_ForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword"/>
+
         <Button
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
+            android:elevation="10dp"
             android:id="@+id/btnSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -63,7 +76,7 @@
             android:text="@string/btn_SignIn"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/lblForgotPassword" />
 
         <TextView
             android:id="@+id/SignWith"
@@ -87,31 +100,31 @@
             app:layout_constraintTop_toBottomOf="@+id/SignWith">
 
             <ImageButton
-                app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/ibGoogle"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toStartOf="@+id/ibFacebook"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/ibFacebook"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toStartOf="@+id/ibTwitter"
-                app:layout_constraintStart_toEndOf="@+id/ibGoogle" />
+                app:layout_constraintStart_toEndOf="@+id/ibGoogle"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                app:layout_constraintTop_toTopOf="parent"
                 android:id="@+id/ibTwitter"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
                 android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ibFacebook" />
+                app:layout_constraintStart_toEndOf="@+id/ibFacebook"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
