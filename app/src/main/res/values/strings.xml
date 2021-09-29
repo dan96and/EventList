@@ -2,21 +2,21 @@
     //App name
     <string name="app_name">• EventList</string>
 
-    //Screen Login
+    //Fragment - Login
     <string name="lbl_LoginAccount">Login to your account</string>
-    <string name="et_Email">Email</string>
-    <string name="et_Password">Password</string>
+    <string name="hint_Email">Email</string>
+    <string name="hint_Password">Password</string>
     <string name="lbl_ForgotPassword">Forgot your password?</string>
     <string name="btn_SignIn">Sign in</string>
     <string name="lbl_SignWith">- Or sign in with -</string>
     <string name="lbl_DontHaveAccount">Don\'t have an account?</string>
-    <string name="lbl_SignUp">Sign up</string>
+    <string name="lbl_SignIn">Sign up</string>
 
-    //Screen Forgot your password
+    //Fragment - ForgotYourPassword
     <string name="lbl_ForgotYourPassword">Forgot your password</string>
     <string name="btn_SendEmail">Send</string>
 
-    //Menu
+    //Activity Home
     <string name="lbl_DaysUntil">Days Until</string>
     <string name="lbl_DaysSince">Days Since</string>
 
@@ -25,5 +25,12 @@
 
     //Fragment - DaysSinceFragment
     <string name="lbl_title_DaysSince">Days Since</string>
+
+    //Fragment - Register
+    <string name="lbl_RegisterAccount">Create your account</string>
+    <string name="hint_ConfirmPassword">Confirm password</string>
+    <string name="btn_Register">Register</string>
+    <string name="lbl_SignUpWith">Or sign up with</string>
+
 
 </resources>

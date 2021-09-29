@@ -1,6 +1,5 @@
 package com.example.eventlist.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.eventlist.activities.HomeView
 import com.example.eventlist.R
 import com.example.eventlist.databinding.FragmentLoginViewBinding
-
+import com.example.eventlist.util.Util
 
 class LoginView : Fragment() {
 
@@ -31,22 +30,21 @@ class LoginView : Fragment() {
 
         //Navigation
         binding.lblForgotPassword.setOnClickListener {
-
             findNavController().navigate(R.id.action_LoginFragment_to_ForgotPasswordFragment)
         }
 
-        //Navigation login
         binding.btnSignIn.setOnClickListener{
+            Util.openActivity(context, HomeView::class.java)
+        }
 
-            val intent = Intent(activity, HomeView::class.java)
-            startActivity(intent)
+        binding.lblSignUp.setOnClickListener {
+            findNavController().navigate(R.id.action_loginView_to_registerView)
         }
 
         super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onDestroyView() {
-
         super.onDestroyView()
         _binding = null
     }
