@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginView"
-        android:name="com.example.eventlist.Fragments.LoginView"
+        android:name="com.example.eventlist.fragments.LoginView"
         android:label="LoginScreenFragment"
         tools:layout="@layout/fragment_login_view" >
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotYourPasswordView"
-        android:name="com.example.eventlist.Fragments.ForgotYourPasswordView"
+        android:name="com.example.eventlist.fragments.ForgotYourPasswordView"
         android:label="fragment_forgot_your_password_view"
         tools:layout="@layout/fragment_forgot_your_password_view" >
         <action

@@ -1,4 +1,4 @@
-package com.example.eventlist.Activities
+package com.example.eventlist.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

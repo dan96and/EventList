@@ -16,5 +16,14 @@
     <string name="lbl_ForgotYourPassword">Forgot your password</string>
     <string name="btn_SendEmail">Send</string>
 
+    //Menu
+    <string name="lbl_DaysUntil">Days Until</string>
+    <string name="lbl_DaysSince">Days Since</string>
+
+    //Fragment - DaysUntilFragment
+    <string name="lbl_title_DaysUntil">Days Until</string>
+
+    //Fragment - DaysSinceFragment
+    <string name="lbl_title_DaysSince">Days Since</string>
 
 </resources>
