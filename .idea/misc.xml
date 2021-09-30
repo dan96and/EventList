@@ -4,13 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_principal_view.xml" value="0.2341485507246377" />
+        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_principal_view.xml" value="0.1" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_days_since.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_days_until.xml" value="0.2341485507246377" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_forgot_your_password_view.xml" value="0.264" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_login_view.xml" value="0.4" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_register_view.xml" value="0.264" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/menu/bnv_principal_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/menu/menu_bottom_nav.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

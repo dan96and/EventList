@@ -6,24 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".activities.HomeView">
 
-    <FrameLayout
-        android:id="@+id/flHomeContainer"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
+        android:name="com.example."
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/grey"
         android:elevation="@dimen/cardview_default_elevation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bnv_principal_view"
-        android:name="com.example."
-        tools:layout="@layout/fragment_days_until"/>
+        tools:layout="@layout/fragment_days_until" />
+
+    <fragment
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navGraph="@navigation/nav_bottom_navigation_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

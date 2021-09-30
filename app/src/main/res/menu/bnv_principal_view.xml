@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/actionDaysUntil"
+        android:id="@+id/daysUntilView"
         android:icon="@drawable/ic_twitter"
         android:title="@string/lbl_DaysUntil" />
 
     <item
-        android:id="@+id/actionDaysSince"
+        android:id="@+id/daysSinceView"
         android:icon="@drawable/ic_twitter"
         android:title="@string/lbl_DaysSince" />
 </menu>
