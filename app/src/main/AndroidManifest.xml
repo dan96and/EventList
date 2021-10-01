@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
+            android:name=".activities.NewEventView"
+            android:exported="true" />
+        <activity
             android:name=".activities.HomeView"
             android:exported="true" />
         <activity

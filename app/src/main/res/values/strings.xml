@@ -32,5 +32,12 @@
     <string name="btn_Register">Register</string>
     <string name="lbl_SignUpWith">Or sign up with</string>
 
+    //Activity - New event
+    <string name="btn_Cancel">Cancel</string>
+    <string name="hint_Name">Name</string>
+    <string name="hint_Date">Date</string>
+    <string name="hint_Icon">Icon</string>
+    <string name="btn_Add">Add</string>
+
 
 </resources>
