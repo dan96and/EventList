@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/daysUntilView"
-        android:name="com.example.eventlist.fragments.DaysUntilView"
+        android:name="com.example.eventlist.view.fragments.DaysUntilView"
         android:label="fragment_days_until"
         tools:layout="@layout/fragment_days_until" />
 
     <fragment
         android:id="@+id/daysSinceView"
-        android:name="com.example.eventlist.fragments.DaysSinceView"
+        android:name="com.example.eventlist.view.fragments.DaysSinceView"
         android:label="fragment_days_since"
         tools:layout="@layout/fragment_days_since" />
 </navigation>

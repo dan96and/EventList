@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LoginView">
+    tools:context=".view.fragments.LoginView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -46,6 +46,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvLoginAccount" />
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
