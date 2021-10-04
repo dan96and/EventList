@@ -10,6 +10,7 @@ class LoginInteractor(private var presenter: LoginPresenter) : LoginInterface.Lo
 
     private var auth = FirebaseAuth.getInstance()
 
+    //LOGIN
     override fun signWithEmailAndPassword(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -19,6 +20,13 @@ class LoginInteractor(private var presenter: LoginPresenter) : LoginInterface.Lo
                 Log.v(Util.TAG_LOGIN, "Login incorrecto, llamando al Presentador..")
                 presenter.signIncorrect()
             }
+        }
+    }
+
+    //AUTO-LOGIN
+    override fun autoLogin() {
+        if(auth.currentUser != null){
+            presenter.autoLoginSuccesfull()
         }
     }
 }

@@ -32,7 +32,7 @@ class LoginView : Fragment(), LoginInterface.LoginView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        //Navigation
+        //NAVIGATION
         binding.lblForgotPassword.setOnClickListener {
             findNavController().navigate(R.id.action_LoginFragment_to_ForgotPasswordFragment)
         }
@@ -42,7 +42,7 @@ class LoginView : Fragment(), LoginInterface.LoginView {
         }
 
 
-        //Login
+        //LOGIN
         binding.btnSignIn.setOnClickListener {
             Log.v(Util.TAG_LOGIN, "Vista llamando al Presenter..")
             presenter.signWithEmailAndPassword(
@@ -61,6 +61,11 @@ class LoginView : Fragment(), LoginInterface.LoginView {
 
     override fun showMessageErrorLogin(message: String) {
         Util.showToast(context, message)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        presenter.autoLogin()
     }
 
     override fun onDestroyView() {

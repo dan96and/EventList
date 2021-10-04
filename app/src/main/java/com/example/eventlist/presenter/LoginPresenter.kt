@@ -10,6 +10,7 @@ class LoginPresenter(private var view: LoginView) : LoginInterface.LoginPresente
 
     private var interactor = LoginInteractor(this)
 
+    //VALIDATION
     override fun checkFormatEmailAndPassword(email: String, password: String): Boolean {
         if (email != "" && password != "") {
             return true
@@ -17,6 +18,7 @@ class LoginPresenter(private var view: LoginView) : LoginInterface.LoginPresente
         return false
     }
 
+    //LOGIN
     override fun signWithEmailAndPassword(email: String, password: String) {
         if (checkFormatEmailAndPassword(email, password)) {
             interactor.signWithEmailAndPassword(email, password)
@@ -36,5 +38,14 @@ class LoginPresenter(private var view: LoginView) : LoginInterface.LoginPresente
         Log.v(Util.TAG_LOGIN, "Presenter llamando a la vista..")
         view.showMessageErrorLogin("Usuario o contraseña incorrectos")
 
+    }
+
+    //AUTO-LOGIN
+    override fun autoLogin() {
+        interactor.autoLogin()
+    }
+
+    override fun autoLoginSuccesfull() {
+        view.goHomeView()
     }
 }

@@ -14,13 +14,17 @@ interface LoginInterface {
 
         //PRESENTER - INTERACTOR
         fun signWithEmailAndPassword(email: String, password: String)
+        fun autoLogin()
 
         //INTERACTOR - PRESENTER
         fun signSuccesfull()
         fun signIncorrect()
+
+        fun autoLoginSuccesfull()
     }
 
     interface LoginInteractor {
         fun signWithEmailAndPassword(email: String, password: String)
+        fun autoLogin()
     }
 }
