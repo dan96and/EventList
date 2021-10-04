@@ -54,6 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvRegisterAccount" />
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -64,6 +65,7 @@
             app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <EditText
+            android:inputType="textPassword"
             android:id="@+id/etConfirmPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
