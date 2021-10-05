@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.HomeView">
+    tools:context=".view.activities.InformationView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerTop"
@@ -14,20 +14,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/btnInformation"
+        <ImageButton
+            android:id="@+id/btnBeforeArrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="..."
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_before"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
             app:layout_constraintStart_toStartOf="@id/containerTop"
             app:layout_constraintTop_toTopOf="@id/containerTop" />
 
         <TextView
+            android:padding="16dp"
             android:id="@+id/lblNameApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -36,24 +35,10 @@
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
-            app:layout_constraintEnd_toStartOf="@id/btnAddEvent"
-            app:layout_constraintStart_toEndOf="@id/btnInformation"
-            app:layout_constraintTop_toTopOf="@id/containerTop"
-            android:padding="16dp"/>
-
-        <Button
-            android:id="@+id/btnAddEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:text="+"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/containerTop"
             app:layout_constraintEnd_toEndOf="@id/containerTop"
+            app:layout_constraintStart_toStartOf="@id/containerTop"
             app:layout_constraintTop_toTopOf="@id/containerTop" />
-
+        
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <fragment
@@ -62,22 +47,11 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/containerTop"
-        app:navGraph="@navigation/nav_bottom_navigation_view" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
-        android:name="com.example."
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@color/grey"
-        android:elevation="@dimen/cardview_default_elevation"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/bnv_principal_view"
-        tools:layout="@layout/fragment_days_until" />
+        app:navGraph="@navigation/nav_information_account" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"

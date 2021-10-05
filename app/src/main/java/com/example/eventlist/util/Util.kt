@@ -11,6 +11,7 @@ object Util {
     //TAGS
     const val TAG_LOGIN = "Login"
     const val TAG_REGISTER = "Register"
+    const val TAG_MENU_LOGOUT = "LogOut"
 
     //FUNCTIONS
     fun openActivity(context: Context?, clase: Class<*>) {

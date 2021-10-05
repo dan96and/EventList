@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_information_account"
+    app:startDestination="@id/menuInformationView">
+    <fragment
+        android:id="@+id/menuInformationView"
+        android:name="com.example.eventlist.view.fragments.MenuInformationView"
+        android:label="fragment_menu_information_view"
+        tools:layout="@layout/fragment_menu_information_view" />
+</navigation>

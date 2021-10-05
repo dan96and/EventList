@@ -12,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <activity
-            android:name="com.example.eventlist.view.activities.NewEventView"
+            android:name=".view.activities.InformationView"
             android:exported="true" />
         <activity
-            android:name="com.example.eventlist.view.activities.HomeView"
+            android:name=".view.activities.NewEventView"
             android:exported="true" />
         <activity
-            android:name="com.example.eventlist.view.activities.MainActivity"
+            android:name=".view.activities.HomeView"
+            android:exported="true" />
+        <activity
+            android:name=".view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

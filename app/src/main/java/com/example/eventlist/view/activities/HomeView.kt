@@ -25,6 +25,10 @@ class HomeView : AppCompatActivity() {
             Util.openActivity(this,NewEventView()::class.java)
         }
 
+        binding.btnInformation.setOnClickListener {
+            Util.openActivity(this, InformationView::class.java)
+        }
+
     }
 
     private fun setupBottomNavMenu() {
