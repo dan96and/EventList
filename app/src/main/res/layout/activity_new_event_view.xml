@@ -41,8 +41,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/containerTop" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -56,10 +54,10 @@
         app:layout_constraintTop_toTopOf="@id/containerTop">
 
         <TextView
-            android:id="@+id/tvRegisterAccount"
+            android:id="@+id/tvNewEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/lbl_RegisterAccount"
+            android:text="@string/lbl_NewEvent"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,46 +72,40 @@
             android:paddingTop="32dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegisterAccount" />
-
-        <EditText
-            android:id="@+id/etIcon"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_Icon"
-            android:paddingTop="32dp"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etName" />
+            app:layout_constraintTop_toBottomOf="@+id/tvNewEvent" />
 
         <EditText
             android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
             android:hint="@string/hint_Date"
+            android:inputType="date"
             android:paddingTop="32dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etIcon" />
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
 
-        <Switch
+        <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchNotification"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="32dp"
             android:paddingBottom="8dp"
-            android:text="Notification"
+            android:text="@string/lbl_Switch"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:text="Add"
+        android:text="@string/btn_Add"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/containerForm"
