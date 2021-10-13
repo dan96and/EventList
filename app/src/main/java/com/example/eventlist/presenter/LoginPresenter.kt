@@ -26,7 +26,6 @@ class LoginPresenter(private var view: LoginView) : LoginInterface.LoginPresente
         } else {
             view.showMessageErrorLogin("Campos vacios")
         }
-
     }
 
     override fun signSuccesfull() {
@@ -37,7 +36,6 @@ class LoginPresenter(private var view: LoginView) : LoginInterface.LoginPresente
     override fun signIncorrect() {
         Log.v(Util.TAG_LOGIN, "Presenter llamando a la vista..")
         view.showMessageErrorLogin("Usuario o contraseña incorrectos")
-
     }
 
     //AUTO-LOGIN
