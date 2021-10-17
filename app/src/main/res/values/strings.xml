@@ -48,5 +48,9 @@
     <string name="btn_LogOut">Log out</string>
     <string name="lbl_Switch">Notification</string>
 
+    //CardView
+    <string name="lbl_TitleEvent">Title of the event</string>
+    <string name="lbl_Date">Date created - Time elapsed</string>
+
 
 </resources>

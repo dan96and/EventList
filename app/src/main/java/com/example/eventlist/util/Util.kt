@@ -3,8 +3,11 @@ package com.example.eventlist.util
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 object Util {
 
@@ -13,6 +16,16 @@ object Util {
     const val TAG_REGISTER = "Register"
     const val TAG_MENU_LOGOUT = "LogOut"
     const val TAG_NEW_EVENT = "NewEvent"
+    const val TAG_SHOW_EVENTSINCE = "ShowEventSince"
+
+    //GET CURRENT DATE
+    val sdf = SimpleDateFormat("dd/MM/yyyy")
+    val currentDate = sdf.format(Date()).toString()
+
+    //FIREBASE
+     val userId = Firebase.auth.currentUser!!.uid
+     val db = Firebase.firestore
+
 
     //FUNCTIONS
     fun openActivity(context: Context?, clase: Class<*>) {

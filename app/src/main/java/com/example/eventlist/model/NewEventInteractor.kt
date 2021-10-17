@@ -10,21 +10,19 @@ import com.google.firebase.ktx.Firebase
 
 class NewEventInteractor(private var presenter: NewEventPresenter) : NewEventInterface.NewEventInteractor {
 
-    private val db = Firebase.firestore
-    private val userId = Firebase.auth.currentUser!!.uid
-
     override fun uploadEventFireStore(name: String, date: String, notification: Boolean) {
-        val prueba = hashMapOf(
+        val eventSince = hashMapOf(
             "name" to name,
             "date" to date,
+            "dateCreated" to Util.currentDate,
             "notification" to notification
         )
 
-        db.collection(userId).add(prueba).addOnSuccessListener { documentReference ->
+        Util.db.collection(Util.userId).document("EventSince").set(eventSince).addOnSuccessListener {
             Log.v(Util.TAG_NEW_EVENT,"Evento creado correctamente, comunicando interactor con presenter..")
             presenter.uploadEventCorrect()
         }
-            .addOnFailureListener { e ->
+            .addOnFailureListener {
                 Log.v(Util.TAG_NEW_EVENT,"ERROR al crear evento, comunicando interactor con presenter..")
                 presenter.uploadEventError()
             }
