@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventlist.R
-import com.example.eventlist.objects.EventSince
+import com.example.eventlist.objects.Event
 
-class AdapterEvent(private var eventList: MutableList<EventSince>) : RecyclerView.Adapter<AdapterEvent.MyViewHolder>() {
+class AdapterEvent(private var eventList: MutableList<Event>) : RecyclerView.Adapter<AdapterEvent.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view =
@@ -29,7 +29,7 @@ class AdapterEvent(private var eventList: MutableList<EventSince>) : RecyclerVie
     class MyViewHolder(view: View) :RecyclerView.ViewHolder(view){
         private val title = view.findViewById(R.id.cvTitle) as TextView
         private val date = view.findViewById(R.id.cvDate) as TextView
-        fun bind(event: EventSince) {
+        fun bind(event: Event) {
             title.text = event.title
             date.text = event.getStringDateCreationAndDate()
         }

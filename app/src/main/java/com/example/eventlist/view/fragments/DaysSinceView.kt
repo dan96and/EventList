@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventlist.adapters.AdapterEvent
 import com.example.eventlist.databinding.FragmentDaysSinceBinding
 import com.example.eventlist.interfaces.EventSinceInterface
-import com.example.eventlist.objects.EventSince
+import com.example.eventlist.objects.Event
 import com.example.eventlist.presenter.EventSincePresenter
 import com.example.eventlist.util.Util
 
@@ -32,7 +32,7 @@ class DaysSinceView : Fragment(), EventSinceInterface.EventSinceView {
         return binding.root
     }
 
-    override fun showEventSince(eventSinceList: MutableList<EventSince>) {
+    override fun showEventSince(eventSinceList: MutableList<Event>) {
         Log.v(Util.TAG_SHOW_EVENTSINCE,"Mostrando recyclerview en la vista..")
 
         adapter = AdapterEvent(eventSinceList)
