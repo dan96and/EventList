@@ -17,6 +17,8 @@ object Util {
     const val TAG_MENU_LOGOUT = "LogOut"
     const val TAG_NEW_EVENT = "NewEvent"
     const val TAG_SHOW_EVENTSINCE = "ShowEventSince"
+    const val TAG_SHOW_EVENTUNTIL = "ShowEventUntil"
+
 
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")

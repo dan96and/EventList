@@ -7,7 +7,6 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDaysUntil"
-            android:background="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
