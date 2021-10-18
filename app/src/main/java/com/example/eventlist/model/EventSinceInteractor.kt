@@ -19,12 +19,16 @@ class EventSinceInteractor(private var presenter: EventSincePresenter) :
     override fun uploadEventsSinceFirestore() {
         Util.db.collection(Util.userId).get().addOnSuccessListener { result ->
             for (document in result) {
-                name = document.getString("name")!!
-                date = document.getString("date")!!
-                dateCreated = document.getString("dateCreated")!!
-                typeEvent = document.getString("typeEvent")!!
-                notification = document.getBoolean("notification")!!
-                eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification))
+                if(document.getString("typeEvent")=="EventSince"){
+                    name = document.getString("name")!!
+                    date = document.getString("date")!!
+                    dateCreated = document.getString("dateCreated")!!
+                    typeEvent = document.getString("typeEvent")!!
+                    notification = document.getBoolean("notification")!!
+                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification))
+                }else{
+                    continue
+                }
             }
             Log.v(Util.TAG_SHOW_EVENTSINCE,"Eventos descargados correctamente. Comunicando interactor con el presenter..")
             presenter.uploadEventsSinceSuccessful(eventSinceList)
