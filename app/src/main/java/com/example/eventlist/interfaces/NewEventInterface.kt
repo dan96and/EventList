@@ -1,5 +1,7 @@
 package com.example.eventlist.interfaces
 
+import com.example.eventlist.objects.Event
+
 interface NewEventInterface {
 
     interface NewEventView {
@@ -8,7 +10,7 @@ interface NewEventInterface {
 
     interface NewEventPresenter {
         //Presenter - Interactor
-        fun uploadEvent(name: String, date: String, notification: Boolean)
+        fun uploadEvent(event: Event)
 
         //Presenter - View
         fun uploadEventCorrect()
@@ -19,6 +21,6 @@ interface NewEventInterface {
     }
 
     interface NewEventInteractor {
-        fun uploadEventFireStore(name: String, date: String, notification: Boolean)
+        fun uploadEventFireStore(event: Event)
     }
 }

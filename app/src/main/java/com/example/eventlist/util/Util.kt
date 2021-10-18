@@ -26,7 +26,6 @@ object Util {
      val userId = Firebase.auth.currentUser!!.uid
      val db = Firebase.firestore
 
-
     //FUNCTIONS
     fun openActivity(context: Context?, clase: Class<*>) {
         val intent = Intent(context, clase)

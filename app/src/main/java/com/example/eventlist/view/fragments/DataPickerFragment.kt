@@ -21,6 +21,6 @@ class DataPickerFragment(val listener: (day: Int, month: Int, year: Int) -> Unit
         val month = calendar.get(Calendar.MONTH)
         val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        return DatePickerDialog(activity as Context, this, year, month, day)
+        return DatePickerDialog(activity as Context, this, year, month+1, day)
     }
 }

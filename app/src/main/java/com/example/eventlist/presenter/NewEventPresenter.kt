@@ -3,6 +3,7 @@ package com.example.eventlist.presenter
 import android.util.Log
 import com.example.eventlist.interfaces.NewEventInterface
 import com.example.eventlist.model.NewEventInteractor
+import com.example.eventlist.objects.Event
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.NewEventView
 
@@ -11,10 +12,10 @@ class NewEventPresenter(val view: NewEventView) : NewEventInterface.NewEventPres
     private val interactor = NewEventInteractor(this)
 
     //Presenter - Interactor
-    override fun uploadEvent(name: String, date: String, notification: Boolean) {
-        if (checkfields(name, date)) {
+    override fun uploadEvent(event: Event) {
+        if (checkfields(event.title, event.date)) {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando presenter con el interactor..")
-            interactor.uploadEventFireStore(name, date, notification)
+            interactor.uploadEventFireStore(event)
         } else {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando presenter con view..")
             view.showMessage("Campos vacios")
