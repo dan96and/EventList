@@ -21,6 +21,8 @@ class HomeView : AppCompatActivity() {
 
         setupBottomNavMenu()
 
+        binding.bottomNavigationView.setOnItemReselectedListener { }
+
         binding.btnAddEvent.setOnClickListener{
             Util.openActivity(this,NewEventView()::class.java)
         }
@@ -28,7 +30,6 @@ class HomeView : AppCompatActivity() {
         binding.btnInformation.setOnClickListener {
             Util.openActivity(this, InformationView::class.java)
         }
-
     }
 
     private fun setupBottomNavMenu() {
