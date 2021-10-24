@@ -28,7 +28,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
         val view = binding.root
         setContentView(view)
 
-        binding.btnAddEvent.setOnClickListener {
+        binding.btnSaveChanges.setOnClickListener {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando view con el presenter..")
             presenter.uploadEvent(
                 Event(
