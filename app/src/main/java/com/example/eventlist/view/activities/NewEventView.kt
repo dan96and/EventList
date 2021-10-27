@@ -36,7 +36,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
                     Util.currentDate,
                     binding.etDate.text.toString().trim(),
                     checkTypeEvent(),
-                    checkSwitchNotification()
+                    binding.switchNotification.isChecked,
                 )
             )
         }
@@ -71,13 +71,6 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
     }
 
     //CHECKS
-    private fun checkSwitchNotification(): Boolean {
-        if (binding.switchNotification.isChecked) {
-            return true
-        }
-        return false
-    }
-
     private fun checkTypeEvent(): String {
         dateSelect = Util.sdf.parse(binding.etDate.text.toString())
         return if (dateSelect.before(dateCurrent)) {

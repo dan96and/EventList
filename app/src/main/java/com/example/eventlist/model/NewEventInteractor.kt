@@ -7,9 +7,10 @@ import com.example.eventlist.presenter.NewEventPresenter
 import com.example.eventlist.util.Util
 
 class NewEventInteractor(private var presenter: NewEventPresenter) : NewEventInterface.NewEventInteractor {
-
+    val id = Util.db.collection(Util.userId).document().id
     override fun uploadEventFireStore(event:Event) {
         val eventSince = hashMapOf(
+            "id" to id,
             "name" to event.title,
             "date" to event.date,
             "dateCreated" to event.dateCreation,
@@ -17,7 +18,7 @@ class NewEventInteractor(private var presenter: NewEventPresenter) : NewEventInt
             "notification" to event.notification
         )
 
-        Util.db.collection(Util.userId).document().set(eventSince).addOnSuccessListener {
+        Util.db.collection(Util.userId).document(id).set(eventSince).addOnSuccessListener {
             Log.v(Util.TAG_NEW_EVENT,"Evento creado correctamente, comunicando interactor con presenter..")
             presenter.uploadEventCorrect()
         }

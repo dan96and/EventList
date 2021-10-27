@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:text="@string/lbl_btn_SaveChanges"
+        android:text="@string/btn_Add"
         android:textColor="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
         app:layout_constraintStart_toStartOf="@+id/containerForm"

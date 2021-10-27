@@ -15,6 +15,7 @@ class EventSinceInteractor(private var presenter: EventSincePresenter) :
     private lateinit var dateCreated: String
     private lateinit var typeEvent: String
     private var notification: Boolean = false
+    private lateinit var id: String
 
     override fun uploadEventsSinceFirestore() {
         Util.db.collection(Util.userId).get().addOnSuccessListener { result ->
@@ -25,7 +26,8 @@ class EventSinceInteractor(private var presenter: EventSincePresenter) :
                     dateCreated = document.getString("dateCreated")!!
                     typeEvent = document.getString("typeEvent")!!
                     notification = document.getBoolean("notification")!!
-                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification))
+                    id = document.getString("id")!!
+                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id))
                 }else{
                     continue
                 }
