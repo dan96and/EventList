@@ -11,6 +11,7 @@ import com.example.eventlist.objects.Event
 import com.example.eventlist.presenter.EditEventPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DataPickerFragment
+import com.example.eventlist.view.fragments.DialogDeleteEventFragmentView
 import java.util.*
 
 class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
@@ -33,8 +34,8 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         //Guardar los cambios de las modificaciones del evento
         binding.btnSaveChanges.setOnClickListener {
-            Log.v(Util.TAG_NEW_EVENT,"Comunicando vista con el presentador..")
-            var event = intent.extras!!.getSerializable("KEY") as Event
+            Log.v(Util.TAG_NEW_EVENT, "Comunicando vista con el presentador..")
+            val event = intent.extras!!.getSerializable("KEY") as Event
             Log.v(Util.TAG_NEW_EVENT, event.idEvent)
             presenter.saveChangesEvent(
                 Event(
@@ -65,6 +66,12 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         binding.btnCancel.setOnClickListener {
             this.finish()
+        }
+
+        binding.btnDeleteEvent.setOnClickListener {
+            val event = intent.extras!!.getSerializable("KEY") as Event
+            val dialog = DialogDeleteEventFragmentView(event.idEvent)
+            dialog.show(supportFragmentManager, "DialogDeleteEvent")
         }
 
     }

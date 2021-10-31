@@ -56,5 +56,9 @@
     <string name="lbl_Title_EditEvent">Edit event</string>
     <string name="lbl_btn_SaveChanges">Save changes</string>
 
+    //Fragment - DialogDeleteEventFragmentView
+    <string name="lbl_Title_Question_Delete_Event">¿Estas seguro de que quieres eliminar el evento?</string>
+    <string name="lbl_Delete_Event_Confirm">Confirmar</string>
+    <string name="lbl_Delete_Event_Cancel">Cancelar</string>
 
 </resources>
