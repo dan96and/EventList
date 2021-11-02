@@ -43,7 +43,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
                     "",
                     binding.etDate.text.toString().trim(),
                     checkTypeEvent(),
-                    binding.switchNotification.isChecked,
+                    Util.checkValueSwitchNotification(binding.switchNotification.isChecked),
                     event.idEvent
                 )
             )

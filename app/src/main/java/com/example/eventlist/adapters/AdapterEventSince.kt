@@ -17,9 +17,7 @@ class AdapterEventSince(private var eventList: MutableList<Event>) : RecyclerVie
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener){
-
         mListener = listener
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

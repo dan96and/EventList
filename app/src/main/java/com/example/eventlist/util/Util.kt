@@ -25,8 +25,8 @@ object Util {
     val currentDate = sdf.format(Date()).toString()
 
     //FIREBASE
-     val userId = Firebase.auth.currentUser!!.uid
-     val db = Firebase.firestore
+    val userId = Firebase.auth.currentUser!!.uid
+    val db = Firebase.firestore
 
     //FUNCTIONS
     fun openActivity(context: Context?, clase: Class<*>) {
@@ -36,5 +36,13 @@ object Util {
 
     fun showToast(context: Context?, message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+    }
+
+    fun checkValueSwitchNotification(valueSwitch: Boolean): Boolean {
+        if (valueSwitch) {
+            return true
+        } else {
+            return false
+        }
     }
 }

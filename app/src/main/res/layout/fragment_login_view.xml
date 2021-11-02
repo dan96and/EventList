@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.LoginView">
+    tools:context=".view.fragments.LoginView"
+    android:background="@drawable/background_app">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,6 +25,7 @@
             app:layout_constraintTop_toTopOf="@id/guidelineTop" />
 
         <TextView
+
             android:id="@+id/tvLoginAccount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -36,21 +38,25 @@
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <EditText
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
             android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:padding="8dp"
             android:hint="@string/hint_Email"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginAccount" />
 
         <EditText
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
             android:inputType="textPassword"
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:padding="8dp"
             android:hint="@string/hint_Password"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"

@@ -10,7 +10,7 @@ class EditEventInteractor(val presenter: EditEventPresenter):EditEventInterface.
 
     override fun uploadChangesEvent(event: Event) {
         Util.db.collection(Util.userId).document(event.idEvent).update("name", event.title, "date", event.date,"typeEvent", event.typeEvent, "notification", event.notification ).addOnSuccessListener {
-            Log.v(Util.TAG_NEW_EVENT,"Evento creado modificado correctamente, comunicando interactor con presenter..")
+            Log.v(Util.TAG_NEW_EVENT,"Evento modificado correctamente, comunicando interactor con presenter..")
             presenter.editEventCorrect(event)
         }
             .addOnFailureListener {
