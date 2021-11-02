@@ -19,6 +19,7 @@ object Util {
     const val TAG_SHOW_EVENTSINCE = "ShowEventSince"
     const val TAG_SHOW_EVENTUNTIL = "ShowEventUntil"
     const val TAG_SHOW_DELETEEVENT = "DeleteEvent"
+    const val TAG_FORGOTPASSWORD = "ForgotPassword"
 
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")
@@ -39,10 +40,6 @@ object Util {
     }
 
     fun checkValueSwitchNotification(valueSwitch: Boolean): Boolean {
-        if (valueSwitch) {
-            return true
-        } else {
-            return false
-        }
+        return valueSwitch
     }
 }
