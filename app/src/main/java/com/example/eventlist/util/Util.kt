@@ -20,6 +20,8 @@ object Util {
     const val TAG_SHOW_EVENTUNTIL = "ShowEventUntil"
     const val TAG_SHOW_DELETEEVENT = "DeleteEvent"
     const val TAG_FORGOTPASSWORD = "ForgotPassword"
+    const val TAG_DELETEACCOUNT = "DeleteAccount"
+
 
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")

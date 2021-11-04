@@ -10,14 +10,26 @@ class MenuInformationPresenter(private val view: MenuInformationView) : MenuInfo
 
     private var interactor = MenuInformationInteractor(this)
 
+    //PRESENTER-INTERACTOR
     override fun logOut() {
-        Log.v(Util.TAG_REGISTER, "Presenter llamando al Interactor..")
-        interactor.logOut()
+        Log.v(Util.TAG_MENU_LOGOUT, "Presenter llamando al Interactor..")
+        interactor.logOutFirebase()
     }
 
+    override fun deleteAccount() {
+        Log.v(Util.TAG_DELETEACCOUNT, "Presenter comunicando con el interactor..")
+        interactor.deleteAccountFirebase()
+    }
+
+    //PRESENTER-VIEW
     override fun logOutSuccesfull() {
-        Log.v(Util.TAG_REGISTER, "Presenter llamando a la Vista..")
-        view.logOutGoLogin()
+        Log.v(Util.TAG_MENU_LOGOUT, "Presenter llamando a la Vista..")
+        view.goToHomeLoginScreen()
+    }
+
+    override fun deleteAccountSuccesfull() {
+        Log.v(Util.TAG_DELETEACCOUNT, "Presenter comunicando con el view..")
+        view.showDialogCompleteDeleteAccount()
     }
 
 }

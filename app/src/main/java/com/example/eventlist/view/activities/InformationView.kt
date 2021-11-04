@@ -18,5 +18,6 @@ class InformationView : AppCompatActivity() {
         binding.btnBeforeArrow.setOnClickListener {
             finish()
         }
+
     }
 }

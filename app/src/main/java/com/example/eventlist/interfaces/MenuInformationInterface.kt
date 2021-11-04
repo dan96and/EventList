@@ -2,16 +2,24 @@ package com.example.eventlist.interfaces
 
 interface MenuInformationInterface {
 
-    interface MenuInformationView{
-        fun logOutGoLogin()
+    interface MenuInformationView {
+        fun goToHomeLoginScreen()
+        fun showDialogCompleteDeleteAccount()
     }
 
-    interface MenuInformationPresenter{
+    interface MenuInformationPresenter {
+        //PRESENTER-INTERACTOR
         fun logOut()
+        fun deleteAccount()
+
+        //PRESENTER-VIEW
         fun logOutSuccesfull()
+        fun deleteAccountSuccesfull()
+
     }
 
-    interface MenuInformationInteractor{
-        fun logOut()
+    interface MenuInformationInteractor {
+        fun logOutFirebase()
+        fun deleteAccountFirebase()
     }
 }
