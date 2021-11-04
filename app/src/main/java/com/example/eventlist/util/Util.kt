@@ -35,10 +35,6 @@ object Util {
         context?.startActivity(intent)
     }
 
-    fun showToast(context: Context?, message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-    }
-
     fun checkValueSwitchNotification(valueSwitch: Boolean): Boolean {
         return valueSwitch
     }

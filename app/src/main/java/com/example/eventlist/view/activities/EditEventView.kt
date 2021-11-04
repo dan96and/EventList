@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.eventlist.databinding.ActivityEditEventBinding
 import com.example.eventlist.interfaces.EditEventInterface
@@ -107,11 +108,11 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
     //METHODS OVERRIDE
     override fun showMessage(message: String) {
-        Util.showToast(this, message)
+        Toast.makeText(this,message, Toast.LENGTH_LONG).show()
     }
 
     override fun closeActivityAndShowMessage(message: String) {
-        Util.showToast(this, message)
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
         finish()
     }
 }

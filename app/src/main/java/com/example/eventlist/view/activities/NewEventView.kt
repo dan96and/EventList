@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.eventlist.databinding.ActivityNewEventViewBinding
 import com.example.eventlist.interfaces.NewEventInterface
@@ -82,6 +83,6 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
 
     //OVERRIDE METHODS VIEW
     override fun showMessage(message: String) {
-        Util.showToast(this, message)
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
     }
 }

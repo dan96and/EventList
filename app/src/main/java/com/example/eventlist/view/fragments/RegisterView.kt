@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.eventlist.databinding.FragmentRegisterViewBinding
 import com.example.eventlist.interfaces.RegisterInterface
@@ -53,7 +54,7 @@ class RegisterView : Fragment(), RegisterInterface.RegisterView {
     }
 
     override fun showMessageErrorRegister(message: String) {
-        Util.showToast(context, message)
+        Toast.makeText(context,message, Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroy() {

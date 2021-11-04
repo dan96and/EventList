@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.eventlist.view.activities.HomeView
@@ -60,7 +61,7 @@ class LoginView : Fragment(), LoginInterface.LoginView {
     }
 
     override fun showMessageErrorLogin(message: String) {
-        Util.showToast(context, message)
+        Toast.makeText(context,message, Toast.LENGTH_LONG).show()
     }
 
     override fun onStart() {

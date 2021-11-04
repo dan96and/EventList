@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.eventlist.databinding.FragmentDialogDeleteEventViewBinding
 import com.example.eventlist.interfaces.DialogDeleteEventInterface
@@ -28,7 +29,7 @@ class DialogDeleteEventFragmentView(private val idEvent: String) : DialogFragmen
         }
 
         binding.btnConfirm.setOnClickListener {
-            Log.v(Util.TAG_SHOW_DELETEEVENT,"View comunicando con el presenter..")
+            Log.v(Util.TAG_SHOW_DELETEEVENT, "View comunicando con el presenter..")
             presenter.deleteEvent(idEvent)
         }
 
@@ -37,12 +38,13 @@ class DialogDeleteEventFragmentView(private val idEvent: String) : DialogFragmen
 
     override fun closeActivityShowMessage(message: String) {
         activity?.finish()
-        Util.showToast(context, message)
+
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
     override fun closeFragmentShowMessage(message: String) {
         dismiss()
-        Util.showToast(context, message)
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
     override fun onDestroyView() {
