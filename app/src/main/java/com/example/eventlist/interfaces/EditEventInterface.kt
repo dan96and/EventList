@@ -5,16 +5,21 @@ import com.example.eventlist.objects.Event
 interface EditEventInterface {
     interface EditEventView {
         fun showMessage(message:String)
-        fun closeActivityAndShowMessage(message:String)
+        fun showDialogEditEventSuccesfull(message: String)
+        fun showDialogDeleteEventSuccesfull(message: String)
     }
 
     interface EditEventPresenter {
         //VIEW-PRESENTER
         fun saveChangesEvent(event: Event)
+        fun deleteEvent(idEvent: String)
 
         //INTERACTOR-PRESENTER
         fun editEventCorrect(event: Event)
         fun editEventError()
+
+        fun deleteEventSuccesfull()
+        fun deleteEventError()
 
         //CHECK VIEW
         fun checkFieldsEmpty(title: String, date: String): Boolean
@@ -22,5 +27,6 @@ interface EditEventInterface {
 
     interface EditEventInteractor {
         fun uploadChangesEvent(event: Event)
+        fun deleteEventFireStore(idEvent: String)
     }
 }

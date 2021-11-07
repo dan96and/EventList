@@ -6,13 +6,13 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.eventlist.databinding.ActivityEditEventBinding
 import com.example.eventlist.interfaces.EditEventInterface
 import com.example.eventlist.objects.Event
 import com.example.eventlist.presenter.EditEventPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DataPickerFragment
-import com.example.eventlist.view.fragments.DialogDeleteEventFragmentView
 import java.util.*
 
 class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
@@ -71,8 +71,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         binding.btnDeleteEvent.setOnClickListener {
             val event = intent.extras!!.getSerializable("KEY") as Event
-            val dialog = DialogDeleteEventFragmentView(event.idEvent)
-            dialog.show(supportFragmentManager, "DialogDeleteEvent")
+            showDialogConfirmDeleteEvent(event.idEvent)
         }
 
     }
@@ -108,11 +107,42 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
     //METHODS OVERRIDE
     override fun showMessage(message: String) {
-        Toast.makeText(this,message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    override fun closeActivityAndShowMessage(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
-        finish()
+    override fun showDialogEditEventSuccesfull(message: String) {
+        showDialogSuccesfullDeleteOrEditEvent(message)
     }
+
+    override fun showDialogDeleteEventSuccesfull(message: String) {
+        showDialogSuccesfullDeleteOrEditEvent(message)
+    }
+
+    //Muestra el dialog de confirmacion para eliminar el evento
+    private fun showDialogConfirmDeleteEvent(idEvent: String) {
+        val dialogWarning = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
+        dialogWarning.setTitleText("¿Estás seguro?")
+            .setContentText("Recuerda que si eliminas el evento no lo vas a poder recuperar")
+            .setCancelText("Cancelar")
+            .setConfirmText("Confirmar")
+            .showCancelButton(true)
+            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
+                Log.v(Util.TAG_DELETEACCOUNT, "View comunicando con el presenter..")
+                presenter.deleteEvent(idEvent)
+            })
+            .show()
+    }
+
+    //Muestra el dialog de que el evento se ha eliminado correctamente
+    private fun showDialogSuccesfullDeleteOrEditEvent(message: String) {
+        val dialogSuccess = SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
+        dialogSuccess.setTitleText(message)
+            .setConfirmText("OK")
+            .showCancelButton(false)
+            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
+                finish()
+            })
+            .show()
+    }
+
 }

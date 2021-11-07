@@ -21,13 +21,26 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
             view.showMessage("Hay campos vacios")
         }
     }
+
+    override fun deleteEvent(idEvent: String) {
+        interactor.deleteEventFireStore(idEvent)
+    }
+
     //INTERACTOR - PRESENTER
     override fun editEventCorrect(event: Event) {
-        view.closeActivityAndShowMessage("Cambios realizados correctamente")
+        view.showDialogEditEventSuccesfull("Cambios realizados correctamente!")
     }
 
     override fun editEventError() {
         view.showMessage("Error al guardar los cambios")
+    }
+
+    override fun deleteEventSuccesfull() {
+        view.showDialogDeleteEventSuccesfull("Evento eliminado!")
+    }
+
+    override fun deleteEventError() {
+        TODO("Not yet implemented")
     }
 
     //CHECKS
