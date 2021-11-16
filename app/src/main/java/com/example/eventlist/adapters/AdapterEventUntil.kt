@@ -44,11 +44,13 @@ class AdapterEventUntil(private var eventList: MutableList<Event>) :
 
         private val title = view.findViewById(R.id.cvTitle) as TextView
         private val date = view.findViewById(R.id.cvDate) as TextView
+        private val timeDifferent = view.findViewById(R.id.cvTimeDifferent) as TextView
         private val notification = view.findViewById(R.id.ivNotification) as ImageView
 
         fun bind(event: Event) {
             title.text = event.title
             date.text = event.getStringDateCreationAndDate()
+            timeDifferent.text = event.getTimeDifferentBetweenDates()
             if (!event.notification) {
                 notification.setBackgroundResource(R.drawable.ic_notification_desactive)
             } else {

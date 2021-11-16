@@ -51,6 +51,7 @@
     //CardView
     <string name="lbl_TitleEvent">Title of the event</string>
     <string name="lbl_Date">Date created - Time elapsed</string>
+    <string name="lbl_Time_Different">Time different</string>
 
     //Activity - EditEvent
     <string name="lbl_Title_EditEvent">Edit event</string>
