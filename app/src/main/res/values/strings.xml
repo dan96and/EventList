@@ -14,7 +14,8 @@
     <string name="lbl_SignIn">Sign up</string>
 
     //Fragment - ForgotYourPassword
-    <string name="lbl_ForgotYourPassword">Forgot your password</string>
+    <string name="lbl_ForgotYourPasswordQuestion">Forgot your password?</string>
+    <string name="lbl_EnterYourEmail">Enter your email, we will send you a new password</string>
     <string name="btn_SendEmail">Send</string>
 
     //Activity Home
