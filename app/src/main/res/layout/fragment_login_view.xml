@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.LoginView"
-    android:background="@drawable/background_app">
+    android:background="@drawable/background_app"
+    tools:context=".view.fragments.LoginView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,8 +15,9 @@
             android:id="@+id/tvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/app_name"
+            android:fontFamily="@font/montserratbold"
+            android:paddingTop="64dp"
+            android:text="@string/lbl_WelcomeBack"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
@@ -25,62 +26,78 @@
             app:layout_constraintTop_toTopOf="@id/guidelineTop" />
 
         <TextView
-
             android:id="@+id/tvLoginAccount"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
+            android:fontFamily="@font/montserratbold"
+            android:paddingBottom="4dp"
             android:text="@string/lbl_LoginAccount"
-            android:textSize="22sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
         <EditText
-            android:layout_marginTop="8dp"
-            android:background="@color/white"
             android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawablePadding="8dp"
+            android:elevation="8dp"
+            android:fontFamily="@font/montserratregular"
             android:hint="@string/hint_Email"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/edit_cursor"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/tvLoginAccount" />
 
         <EditText
-            android:layout_marginTop="8dp"
-            android:background="@color/white"
-            android:inputType="textPassword"
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawablePadding="8dp"
+            android:fontFamily="@font/montserratregular"
             android:hint="@string/hint_Password"
+            android:inputType="textPassword"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/edit_cursor"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
         <TextView
-            android:layout_marginTop="4dp"
-            android:textStyle="bold"
             android:id="@+id/lblForgotPassword"
-            android:text="@string/lbl_ForgotPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratbold"
+            android:padding="8dp"
+            android:text="@string/lbl_ForgotPassword"
+            android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword"/>
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
         <Button
-            android:backgroundTint="@color/black"
-            android:textColor="@color/white"
-            android:elevation="10dp"
             android:id="@+id/btnSignIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:background="@drawable/edit_button"
+            android:backgroundTint="@color/black"
+            android:elevation="10dp"
+            android:fontFamily="@font/montserratbold"
             android:text="@string/btn_SignIn"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/lblForgotPassword" />
@@ -91,6 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             android:text="@string/lbl_SignWith"
+            android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
@@ -102,6 +120,7 @@
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
             android:orientation="horizontal"
+            android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/SignWith">
@@ -150,14 +169,18 @@
                 android:id="@+id/lblDontHaveAccount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/lbl_DontHaveAccount" />
+                android:fontFamily="@font/montserratregular"
+                android:text="@string/lbl_DontHaveAccount"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/lblSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratbold"
                 android:paddingStart="4dp"
                 android:text="@string/lbl_SignIn"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
         </LinearLayout>

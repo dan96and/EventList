@@ -3,6 +3,7 @@
     <string name="app_name">• EventList</string>
 
     //Fragment - Login
+    <string name="lbl_WelcomeBack">Welcome back!</string>
     <string name="lbl_LoginAccount">Login to your account</string>
     <string name="hint_Email">Email</string>
     <string name="hint_Password">Password</string>
