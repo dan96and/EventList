@@ -33,6 +33,8 @@
     <string name="hint_ConfirmPassword">Confirm password</string>
     <string name="btn_Register">Register</string>
     <string name="lbl_SignUpWith">Or sign up with</string>
+    <string name="lbl_LetsGetStarted">Let\'s get started!</string>
+    <string name="lbl_CreateAccount">Create an account to get all the features</string>
 
     //Activity - New event
     <string name="lbl_NewEvent">New event</string>

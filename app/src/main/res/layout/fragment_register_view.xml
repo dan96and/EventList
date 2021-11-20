@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_app"
     tools:context=".view.fragments.RegisterView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -12,139 +13,185 @@
 
         <ImageButton
             android:id="@+id/btnBefore"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:background="@drawable/ic_arrow_before"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:padding="16dp"
+            android:src="@drawable/ic_arrow_before"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="@string/app_name"
-            android:textColor="@color/black"
-            android:textSize="32sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toTopOf="@id/guidelineTop" />
-
-        <TextView
-            android:id="@+id/tvRegisterAccount"
+        <!-- ContainerLabels -->
+        <LinearLayout
+            android:id="@+id/containerLabels"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="@string/lbl_RegisterAccount"
-            android:textSize="22sp"
-            android:textStyle="bold"
+            android:orientation="vertical"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+            app:layout_constraintTop_toBottomOf="@id/btnBefore">
 
-        <EditText
-            android:id="@+id/etEmail"
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:fontFamily="@font/montserratbold"
+                android:gravity="center"
+                android:paddingTop="32dp"
+                android:text="@string/lbl_LetsGetStarted"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvRegisterAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratregular"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:text="@string/lbl_CreateAccount"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- ContainerForm -->
+        <LinearLayout
+            android:id="@+id/containerForm"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/hint_Email"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/tvRegisterAccount" />
+            app:layout_constraintTop_toBottomOf="@+id/containerLabels">
 
-        <EditText
-            android:inputType="textPassword"
-            android:id="@+id/etPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/hint_Password"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_email_24"
+                android:drawablePadding="8dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/montserratregular"
+                android:hint="@string/hint_Email"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/edit_cursor" />
 
-        <EditText
-            android:inputType="textPassword"
-            android:id="@+id/etConfirmPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:hint="@string/hint_ConfirmPassword"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="8dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/montserratregular"
+                android:hint="@string/hint_Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/edit_cursor" />
 
-        <Button
-            android:id="@+id/btnRegister"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/black"
-            android:elevation="10dp"
-            android:text="@string/btn_Register"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword" />
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/ic_baseline_lock_24"
+                android:drawablePadding="8dp"
+                android:elevation="8dp"
+                android:fontFamily="@font/montserratregular"
+                android:hint="@string/hint_ConfirmPassword"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@drawable/edit_cursor" />
 
-        <TextView
-            android:id="@+id/SignUpWith"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
-            android:text="@string/lbl_SignUpWith"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_button"
+                android:backgroundTint="@color/black"
+                android:elevation="10dp"
+                android:fontFamily="@font/montserratbold"
+                android:text="@string/btn_SignIn"
+                android:textColor="@color/white" />
+        </LinearLayout>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <!-- ContainerButtonsLogin-->
+        <LinearLayout
             android:id="@+id/containerButtonsLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/SignUpWith">
+            app:layout_constraintTop_toBottomOf="@+id/containerForm">
 
-            <ImageButton
-                android:id="@+id/ibGoogle"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
-                app:layout_constraintEnd_toStartOf="@+id/ibFacebook"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/SignUpWith"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:gravity="center"
+                android:text="@string/lbl_SignUpWith" />
 
-            <ImageButton
-                android:id="@+id/ibFacebook"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
-                app:layout_constraintEnd_toStartOf="@+id/ibTwitter"
-                app:layout_constraintStart_toEndOf="@+id/ibGoogle"
-                app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/SignUpWith">
 
-            <ImageButton
-                android:id="@+id/ibTwitter"
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ibFacebook"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageButton
+                    android:id="@+id/ibGoogle"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_twitter"
+                    app:layout_constraintEnd_toStartOf="@+id/ibFacebook"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageButton
+                    android:id="@+id/ibFacebook"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_twitter"
+                    app:layout_constraintEnd_toStartOf="@+id/ibTwitter"
+                    app:layout_constraintStart_toEndOf="@+id/ibGoogle"
+                    app:layout_constraintTop_toTopOf="parent" />
 
+                <ImageButton
+                    android:id="@+id/ibTwitter"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/ic_twitter"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ibFacebook"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1" />
+            app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineBottom"
@@ -166,9 +213,5 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.1" />
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </FrameLayout>
