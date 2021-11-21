@@ -17,7 +17,15 @@ class EventUntilPresenter(val view : DaysUntilView) : EventUntilInterface.EventU
     }
 
     override fun uploadEventUntilSuccesfull(listEventUntil:MutableList<Event>) {
+        checkEmptyEventList(listEventUntil)
+    }
+
+    override fun checkEmptyEventList(eventSinceList: MutableList<Event>) {
         Log.v(Util.TAG_SHOW_EVENTUNTIL,"Comunicando presenter con la view..")
-        view.showEventUntil(listEventUntil)
+        if (eventSinceList.size == 0) {
+            view.showScreenNoEvents()
+        } else {
+            view.showEventUntil(eventSinceList)
+        }
     }
 }

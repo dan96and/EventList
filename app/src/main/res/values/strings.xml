@@ -66,4 +66,8 @@
     <string name="lbl_Delete_Event_Confirm">Confirmar</string>
     <string name="lbl_Delete_Event_Cancel">Cancelar</string>
 
+    //Fragment-EmptyEvents
+    <string name="lbl_NoEvents">No events!</string>
+    <string name="lbl_StartByAddingSome">Start by adding some</string>
+    <string name="btn_AddEvent">Add event</string>
 </resources>

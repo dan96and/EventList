@@ -15,6 +15,8 @@ import com.example.eventlist.objects.Event
 import com.example.eventlist.presenter.EventSincePresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.EditEventView
+import androidx.navigation.findNavController
+import com.example.eventlist.R
 
 class DaysSinceView : Fragment(), EventSinceInterface.EventSinceView {
 
@@ -35,22 +37,28 @@ class DaysSinceView : Fragment(), EventSinceInterface.EventSinceView {
     }
 
     override fun showEventSince(eventSinceList: MutableList<Event>) {
-        Log.v(Util.TAG_SHOW_EVENTSINCE,"Mostrando recyclerview en la vista..")
+        Log.v(Util.TAG_SHOW_EVENTSINCE, "Mostrando recyclerview en la vista..")
 
         //Rellenar el recyclerview de los eventos
         adapterSince = AdapterEventSince(eventSinceList)
-        binding.rvDaysSince.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvDaysSince.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.rvDaysSince.adapter = adapterSince
 
         //Pulsar en un evento y que te lleve a la pantalla EditEventView
-        adapterSince.setOnItemClickListener(object : AdapterEventSince.OnItemClickListener{
+        adapterSince.setOnItemClickListener(object : AdapterEventSince.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Log.v(Util.TAG_SHOW_EVENTSINCE,"Accediendo a la pantalla EditEventView..")
+                Log.v(Util.TAG_SHOW_EVENTSINCE, "Accediendo a la pantalla EditEventView..")
                 val intent = Intent(context, EditEventView::class.java)
                 intent.putExtra("KEY", eventSinceList[position])
                 startActivity(intent)
             }
         })
+    }
+
+    //Mostrar FragmentNoEvents
+    override fun showScreenNoEvents() {
+        view?.findNavController()?.navigate(R.id.emptyEventsView)
     }
 
     override fun onDestroyView() {

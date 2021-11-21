@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.eventlist.R
 import com.example.eventlist.adapters.AdapterEventUntil
 import com.example.eventlist.databinding.FragmentDaysUntilBinding
 import com.example.eventlist.interfaces.EventUntilInterface
@@ -49,6 +51,11 @@ class DaysUntilView : Fragment(), EventUntilInterface.EventUntilView {
                 startActivity(intent)
             }
         })
+    }
+
+    //Mostrar FragmentNoEvents
+    override fun showScreenNoEvents() {
+        view?.findNavController()?.navigate(R.id.emptyEventsView)
     }
 
     override fun onDestroyView() {

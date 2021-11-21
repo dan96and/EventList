@@ -6,6 +6,7 @@ interface EventSinceInterface {
 
     interface EventSinceView {
         fun showEventSince(eventSinceList: MutableList<Event>)
+        fun showScreenNoEvents()
     }
 
     interface EventSincePresenter {
@@ -14,6 +15,9 @@ interface EventSinceInterface {
 
         //INTERACTOR-PRESENTER
         fun uploadEventsSinceSuccessful(eventSinceList: MutableList<Event>)
+
+        //PRESENTER CHECK
+        fun checkEmptyEventList(eventSinceList: MutableList<Event>)
     }
 
     interface EventSinceInteractor {

@@ -36,14 +36,12 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:fontFamily="@font/montserratbold"
                 android:gravity="center"
                 android:paddingTop="32dp"
                 android:text="@string/lbl_LetsGetStarted"
                 android:textColor="@color/black"
-                android:textSize="32sp"
-                android:textStyle="bold" />
+                android:textSize="32sp" />
 
             <TextView
                 android:id="@+id/tvRegisterAccount"
@@ -54,8 +52,7 @@
                 android:paddingTop="8dp"
                 android:text="@string/lbl_CreateAccount"
                 android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- ContainerForm -->

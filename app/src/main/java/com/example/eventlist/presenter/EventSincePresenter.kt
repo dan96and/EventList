@@ -7,17 +7,27 @@ import com.example.eventlist.objects.Event
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DaysSinceView
 
-class EventSincePresenter(private val view: DaysSinceView) : EventSinceInterface.EventSincePresenter {
+class EventSincePresenter(private val view: DaysSinceView) :
+    EventSinceInterface.EventSincePresenter {
 
     var interactor = EventSinceInteractor(this)
 
     override fun uploadEventsSince() {
-        Log.v(Util.TAG_SHOW_EVENTSINCE," Comunicando presenter con interactor..")
+        Log.v(Util.TAG_SHOW_EVENTSINCE, " Comunicando presenter con interactor..")
         interactor.uploadEventsSinceFirestore()
     }
 
-    override fun uploadEventsSinceSuccessful(eventSinceList:MutableList<Event>) {
-        Log.v(Util.TAG_SHOW_EVENTSINCE,"Transferiendo lista de eventos. Comunicando presenter con view..")
-        view.showEventSince(eventSinceList)
+    override fun uploadEventsSinceSuccessful(eventSinceList: MutableList<Event>) {
+        checkEmptyEventList(eventSinceList)
+    }
+
+    //CheckEmptyEvents
+    override fun checkEmptyEventList(eventSinceList: MutableList<Event>) {
+        Log.v(Util.TAG_SHOW_EVENTSINCE, "Transferiendo lista de eventos. Comunicando presenter con view..")
+        if (eventSinceList.size == 0) {
+            view.showScreenNoEvents()
+        } else {
+            view.showEventSince(eventSinceList)
+        }
     }
 }
