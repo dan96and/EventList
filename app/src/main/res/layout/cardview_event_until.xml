@@ -6,16 +6,16 @@
     android:padding="8dp">
 
     <androidx.cardview.widget.CardView
-        card_view:cardBackgroundColor="@color/light_grey"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        card_view:cardCornerRadius="8dp">
+        android:elevation="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:padding="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:background="@drawable/edit_text_background"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -30,29 +30,36 @@
                     android:id="@+id/cvTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lbl_TitleEvent"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/montserratbold"
+                    android:textColor="@color/black"
+                    android:text="@string/lbl_TitleEvent" />
 
                 <TextView
                     android:id="@+id/cvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lbl_Date" />
+                    android:fontFamily="@font/montserratregular"
+                    android:paddingTop="4dp"
+                    android:text="@string/lbl_Date"
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/cvTimeDifferent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lbl_Time_Different" />
+                    android:fontFamily="@font/montserratregular"
+                    android:paddingTop="4dp"
+                    android:text="@string/lbl_Time_Different"
+                    android:textColor="@color/black" />
 
             </LinearLayout>
-
 
             <ImageView
                 android:id="@+id/ivNotification"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="@drawable/ic_notification_active"
+                android:visibility="gone"
                 card_view:layout_constraintBottom_toBottomOf="parent"
                 card_view:layout_constraintEnd_toEndOf="parent"
                 card_view:layout_constraintTop_toTopOf="parent" />
