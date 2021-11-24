@@ -11,7 +11,7 @@ class NewEventInteractor(private var presenter: NewEventPresenter) : NewEventInt
     override fun uploadEventFireStore(event:Event) {
         val eventSince = hashMapOf(
             "id" to id,
-            "name" to event.title,
+            "name" to event.name,
             "date" to event.date,
             "dateCreated" to event.dateCreation,
             "typeEvent" to event.typeEvent,

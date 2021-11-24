@@ -41,7 +41,7 @@ class AdapterEventSince(private var eventList: MutableList<Event>) : RecyclerVie
         private val date = view.findViewById(R.id.cvDate) as TextView
         private val timeDifferent = view.findViewById(R.id.cvTimeDifferent) as TextView
         fun bind(event: Event) {
-            title.text = event.title
+            title.text = event.name
             date.text = event.getStringDateCreationAndDate()
             timeDifferent.text = event.getTimeDifferentBetweenDates()
         }

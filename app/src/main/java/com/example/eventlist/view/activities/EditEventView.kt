@@ -80,7 +80,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     private fun setDataFields() {
         val event = intent.extras!!.getSerializable("KEY") as Event
         binding.etDate.setText(event!!.date)
-        binding.etName.setText(event.title)
+        binding.etName.setText(event.name)
         binding.switchNotification.isChecked = event.notification
     }
 

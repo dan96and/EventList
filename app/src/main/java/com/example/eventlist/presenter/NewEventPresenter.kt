@@ -13,7 +13,7 @@ class NewEventPresenter(val view: NewEventView) : NewEventInterface.NewEventPres
 
     //Presenter - Interactor
     override fun uploadEvent(event: Event) {
-        if (checkfields(event.title, event.date)) {
+        if (checkfields(event.name, event.date)) {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando presenter con el interactor..")
             interactor.uploadEventFireStore(event)
         } else {

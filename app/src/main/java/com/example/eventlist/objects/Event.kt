@@ -7,11 +7,11 @@ import java.util.*
 
 
 class Event(
-    var title: String,
-    var dateCreation: String,
-    var date: String,
-    var typeEvent: String,
-    var notification: Boolean,
+    var name: String = "",
+    var dateCreation: String = "",
+    var date: String = "",
+    var typeEvent: String = "",
+    var notification: Boolean = false,
     val idEvent: String = ""
 ) : Serializable {
 
@@ -26,9 +26,9 @@ class Event(
         val dateSelect: Date = sdf.parse(date)
         val dateCurrent: Date = sdf.parse(Util.currentDate)
 
-        if(typeEvent == "EventUntil"){
+        if (typeEvent == "EventUntil") {
             diffMiliseconds = dateSelect.time - dateCurrent.time
-        }else{
+        } else {
             diffMiliseconds = dateCurrent.time - dateSelect.time
         }
 

@@ -13,7 +13,7 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
 
     //PRESENTER-INTERACTOR
     override fun saveChangesEvent(event: Event) {
-        if (checkFieldsEmpty(event.title, event.date)) {
+        if (checkFieldsEmpty(event.name, event.date)) {
             Log.v(Util.TAG_NEW_EVENT,"Comunicando presentador con el interactor..")
             interactor.uploadChangesEvent(event)
         }else{

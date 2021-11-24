@@ -48,7 +48,7 @@ class AdapterEventUntil(private var eventList: MutableList<Event>) :
         private val notification = view.findViewById(R.id.ivNotification) as ImageView
 
         fun bind(event: Event) {
-            title.text = event.title
+            title.text = event.name
             date.text = event.getStringDateCreationAndDate()
             timeDifferent.text = event.getTimeDifferentBetweenDates()
             if (!event.notification) {
