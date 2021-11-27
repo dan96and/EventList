@@ -9,7 +9,8 @@ class EventsSQLite(context: Context?) : SQLiteOpenHelper(context, "Events", null
 
     //Creación de la tabla Eventos
     override fun onCreate(db: SQLiteDatabase?) {
-        val orderCreation = "CREATE TABLE IF NOT EXISTS Events (ID_EVENT TEXT PRIMARY KEY, NAME TEXT, DATE_CREATION TEXT, DATE TEXT, TYPE_EVENT TEXT, NOTIFICATION TEXT)"
+        val orderCreation =
+            "CREATE TABLE IF NOT EXISTS Events (ID_EVENT TEXT PRIMARY KEY, NAME TEXT, DATE_CREATION TEXT, DATE TEXT, TYPE_EVENT TEXT, NOTIFICATION INTEGER)"
         db!!.execSQL(orderCreation)
     }
 
@@ -19,20 +20,49 @@ class EventsSQLite(context: Context?) : SQLiteOpenHelper(context, "Events", null
         onCreate(db)
     }
 
-    //Función para añadir todos los eventos a SQLite
+    //Función para añadir todos los Eventos
     fun addEvents(eventList: MutableList<Event>) {
         val db = this.writableDatabase
+        val contentValues = ContentValues()
         for (event in eventList) {
-            val values = ContentValues()
+            contentValues.put("ID_EVENT", event.idEvent)
+            contentValues.put("NAME", event.name)
+            contentValues.put("DATE_CREATION", event.dateCreation)
+            contentValues.put("DATE", event.date)
+            contentValues.put("TYPE_EVENT", event.typeEvent)
+            contentValues.put(
+                "NOTIFICATION", if (event.notification) {
+                    1
+                } else {
+                    0
+                }
+            )
+            db.insert("Events", null, contentValues)
+            contentValues.clear()
+        }
+        db.close()
+    }
 
-            values.put("ID_EVENT", event.idEvent)
-            values.put("NAME", event.name)
-            values.put("DATE_CREATION", event.dateCreation)
-            values.put("DATE", event.date)
-            values.put("TYPE_EVENT", event.typeEvent)
-            values.put("NOTIFICATION", event.notification.toString())
-
-            db.insert("Events", null, values)
+    //Funcion para actualizar todos los Eventos
+    fun saveChanges(eventList: MutableList<Event>) {
+        val db = this.writableDatabase
+        val contentValues = ContentValues()
+        lateinit var args: Array<String>
+        for (event in eventList) {
+            args = arrayOf(event.idEvent)
+            contentValues.put("NAME", event.name)
+            contentValues.put("DATE_CREATION", event.dateCreation)
+            contentValues.put("DATE", event.date)
+            contentValues.put("TYPE_EVENT", event.typeEvent)
+            contentValues.put(
+                "NOTIFICATION", if (event.notification) {
+                    1
+                } else {
+                    0
+                }
+            )
+            db.update("Events", contentValues, "ID_EVENT=?", args)
+            contentValues.clear()
         }
         db.close()
     }

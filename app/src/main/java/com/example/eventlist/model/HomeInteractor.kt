@@ -45,7 +45,8 @@ class HomeInteractor(private val presenter: HomePresenter) : HomeInterface.HomeI
 
     override fun importEventsSQLite(EventList: MutableList<Event>, context: Context) {
         val sqliteEvent = EventsSQLite(context)
-        sqliteEvent.addEvents(EventList)
+        //sqliteEvent.addEvents(EventList)
+        sqliteEvent.saveChanges(EventList)
         Log.v(Util.TAG_HOME, "Eventos de Firebase importados en SQLite")
     }
 }
