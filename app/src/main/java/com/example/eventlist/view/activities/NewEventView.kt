@@ -6,12 +6,16 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
+import androidx.lifecycle.lifecycleScope
 import com.example.eventlist.databinding.ActivityNewEventViewBinding
 import com.example.eventlist.interfaces.NewEventInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.NewEventPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DataPickerFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.*
 
 class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
@@ -31,15 +35,19 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
 
         binding.btnSaveChanges.setOnClickListener {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando view con el presenter..")
-            presenter.uploadEvent(
-                Event(
-                    binding.etName.text.toString().trim(),
-                    Util.currentDate,
-                    binding.etDate.text.toString().trim(),
-                    checkTypeEvent(),
-                    binding.switchNotification.isChecked,
-                )
-            )
+            lifecycleScope.launch {
+                withContext(Dispatchers.IO) {
+                    presenter.uploadEvent(
+                        Event(
+                            name = binding.etName.text.toString().trim(),
+                            dateCreation = Util.currentDate,
+                            date = binding.etDate.text.toString().trim(),
+                            typeEvent = checkTypeEvent(),
+                            notification = binding.switchNotification.isChecked,
+                        )
+                    )
+                }
+            }
         }
 
         binding.etDate.addTextChangedListener {
@@ -83,6 +91,8 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
 
     //OVERRIDE METHODS VIEW
     override fun showMessage(message: String) {
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
+        this.runOnUiThread(Runnable {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+        })
     }
 }

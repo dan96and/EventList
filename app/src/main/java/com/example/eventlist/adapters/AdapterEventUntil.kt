@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventlist.R
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 
 class AdapterEventUntil(private var eventList: MutableList<Event>) :
     RecyclerView.Adapter<AdapterEventUntil.MyViewHolder>() {

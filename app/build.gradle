@@ -2,10 +2,11 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'com.google.gms.google-services'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdk 30
+    compileSdk 31
 
     defaultConfig {
         applicationId "com.example.eventlist"
@@ -70,7 +71,17 @@ dependencies {
     implementation "androidx.cardview:cardview:1.0.0"
 
     //Sweet Alert Dialog
-        implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+
+    //Room
+    def roomVersion = "2.3.0"
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    kapt("androidx.room:room-compiler:$roomVersion")
+    implementation("androidx.room:room-ktx:$roomVersion")
+
+    //Corroutines
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
 
 
 }

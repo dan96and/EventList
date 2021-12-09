@@ -8,7 +8,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.eventlist.R
 import com.example.eventlist.databinding.ActivityHomeViewBinding
 import com.example.eventlist.interfaces.HomeInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.HomePresenter
 import com.example.eventlist.util.Util
 

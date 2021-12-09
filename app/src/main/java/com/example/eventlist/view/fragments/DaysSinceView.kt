@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventlist.adapters.AdapterEventSince
 import com.example.eventlist.databinding.FragmentDaysSinceBinding
 import com.example.eventlist.interfaces.EventSinceInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EventSincePresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.EditEventView

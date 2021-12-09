@@ -13,7 +13,7 @@ import com.example.eventlist.R
 import com.example.eventlist.adapters.AdapterEventUntil
 import com.example.eventlist.databinding.FragmentDaysUntilBinding
 import com.example.eventlist.interfaces.EventUntilInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EventUntilPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.EditEventView

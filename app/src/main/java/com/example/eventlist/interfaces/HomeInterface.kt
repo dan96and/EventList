@@ -1,7 +1,7 @@
 package com.example.eventlist.interfaces
 
 import android.content.Context
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 
 interface HomeInterface {
 

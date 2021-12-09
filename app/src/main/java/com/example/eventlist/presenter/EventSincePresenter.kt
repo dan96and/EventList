@@ -3,7 +3,7 @@ package com.example.eventlist.presenter
 import android.util.Log
 import com.example.eventlist.interfaces.EventSinceInterface
 import com.example.eventlist.model.EventSinceInteractor
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DaysSinceView
 

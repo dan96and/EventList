@@ -1,18 +1,21 @@
-package com.example.eventlist.objects
+package com.example.eventlist.database.entities
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.example.eventlist.util.Util
 import java.io.Serializable
 import java.text.SimpleDateFormat
 import java.util.*
 
-
+@Entity(tableName = "Events")
 class Event(
     var name: String = "",
     var dateCreation: String = "",
     var date: String = "",
     var typeEvent: String = "",
     var notification: Boolean = false,
-    val idEvent: String = ""
+    @PrimaryKey(autoGenerate = true)
+    var idEvent: Int = 0
 ) : Serializable {
 
     fun getStringDateCreationAndDate(): String {

@@ -2,9 +2,8 @@ package com.example.eventlist.model
 
 import android.content.Context
 import android.util.Log
-import com.example.eventlist.objects.EventsSQLite
 import com.example.eventlist.interfaces.HomeInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.HomePresenter
 import com.example.eventlist.util.Util
 
@@ -27,7 +26,7 @@ class HomeInteractor(private val presenter: HomePresenter) : HomeInterface.HomeI
                 typeEvent = document.getString("typeEvent")!!
                 notification = document.getBoolean("notification")!!
                 id = document.getString("id")!!
-                eventList.add(Event(title, dateCreated, date, typeEvent, notification, id))
+                //eventList.add(Event(title, dateCreated, date, typeEvent, notification, id.toInt()))
             }
             Log.v(
                 Util.TAG_HOME,
@@ -44,9 +43,9 @@ class HomeInteractor(private val presenter: HomePresenter) : HomeInterface.HomeI
     }
 
     override fun importEventsSQLite(EventList: MutableList<Event>, context: Context) {
-        val sqliteEvent = EventsSQLite(context)
+        //val sqliteEvent = EventsSQLite(context)
         //sqliteEvent.addEvents(EventList)
-        sqliteEvent.saveChanges(EventList)
-        Log.v(Util.TAG_HOME, "Eventos de Firebase importados en SQLite")
+        //sqliteEvent.saveChanges(EventList)
+        //Log.v(Util.TAG_HOME, "Eventos de Firebase importados en SQLite")
     }
 }

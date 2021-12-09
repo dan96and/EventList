@@ -1,30 +1,15 @@
 package com.example.eventlist.model
 
-import android.util.Log
 import com.example.eventlist.interfaces.NewEventInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
+import com.example.eventlist.objects.EventApp
 import com.example.eventlist.presenter.NewEventPresenter
-import com.example.eventlist.util.Util
 
-class NewEventInteractor(private var presenter: NewEventPresenter) : NewEventInterface.NewEventInteractor {
-    val id = Util.db.collection(Util.userId).document().id
-    override fun uploadEventFireStore(event:Event) {
-        val eventSince = hashMapOf(
-            "id" to id,
-            "name" to event.name,
-            "date" to event.date,
-            "dateCreated" to event.dateCreation,
-            "typeEvent" to event.typeEvent,
-            "notification" to event.notification
-        )
+class NewEventInteractor(private var presenter: NewEventPresenter) :
+    NewEventInterface.NewEventInteractor {
 
-        Util.db.collection(Util.userId).document(id).set(eventSince).addOnSuccessListener {
-            Log.v(Util.TAG_NEW_EVENT,"Evento creado correctamente, comunicando interactor con presenter..")
-            presenter.uploadEventCorrect()
-        }
-            .addOnFailureListener {
-                Log.v(Util.TAG_NEW_EVENT,"ERROR al crear evento, comunicando interactor con presenter..")
-                presenter.uploadEventError()
-            }
+    override fun addEventSqlite(event: Event) {
+        EventApp.getDB().eventDao().addEvent(event)
+        presenter.uploadEventCorrect()
     }
 }

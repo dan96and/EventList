@@ -2,7 +2,7 @@ package com.example.eventlist.model
 
 import android.util.Log
 import com.example.eventlist.interfaces.EventUntilInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EventUntilPresenter
 import com.example.eventlist.util.Util
 
@@ -26,7 +26,7 @@ class EventUntilInteractor (private val presenter : EventUntilPresenter):EventUn
                     typeEvent = document.getString("typeEvent")!!
                     notification = document.getBoolean("notification")!!
                     id = document.getString("id")!!
-                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id))
+                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id.toInt()))
                 }else{
                     continue
                 }

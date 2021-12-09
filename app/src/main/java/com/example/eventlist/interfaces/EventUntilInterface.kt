@@ -1,6 +1,6 @@
 package com.example.eventlist.interfaces
 
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 
 interface EventUntilInterface {
 

@@ -9,7 +9,7 @@ import androidx.core.widget.addTextChangedListener
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.eventlist.databinding.ActivityEditEventBinding
 import com.example.eventlist.interfaces.EditEventInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EditEventPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DataPickerFragment
@@ -37,7 +37,6 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
         binding.btnSaveChanges.setOnClickListener {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando vista con el presentador..")
             val event = intent.extras!!.getSerializable("KEY") as Event
-            Log.v(Util.TAG_NEW_EVENT, event.idEvent)
             presenter.saveChangesEvent(
                 Event(
                     binding.etName.text.toString().trim(),
@@ -71,7 +70,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         binding.btnDeleteEvent.setOnClickListener {
             val event = intent.extras!!.getSerializable("KEY") as Event
-            showDialogConfirmDeleteEvent(event.idEvent)
+            showDialogConfirmDeleteEvent(event.idEvent.toString())
         }
 
     }

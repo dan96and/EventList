@@ -1,6 +1,6 @@
 package com.example.eventlist.interfaces
 
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 
 interface NewEventInterface {
 
@@ -21,6 +21,6 @@ interface NewEventInterface {
     }
 
     interface NewEventInteractor {
-        fun uploadEventFireStore(event: Event)
+        fun addEventSqlite(event: Event)
     }
 }

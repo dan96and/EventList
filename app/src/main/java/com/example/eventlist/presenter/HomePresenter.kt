@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.example.eventlist.interfaces.HomeInterface
 import com.example.eventlist.model.HomeInteractor
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.HomeView
 

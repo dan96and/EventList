@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.eventlist.R
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 
 class AdapterEventSince(private var eventList: MutableList<Event>) : RecyclerView.Adapter<AdapterEventSince.MyViewHolder>() {
 

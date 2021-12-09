@@ -2,7 +2,7 @@ package com.example.eventlist.model
 
 import android.util.Log
 import com.example.eventlist.interfaces.EventSinceInterface
-import com.example.eventlist.objects.Event
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EventSincePresenter
 import com.example.eventlist.util.Util
 
@@ -15,7 +15,7 @@ class EventSinceInteractor(private var presenter: EventSincePresenter) :
     private lateinit var dateCreated: String
     private lateinit var typeEvent: String
     private var notification: Boolean = false
-    private lateinit var id: String
+    private var id: Int = 0
 
     override fun uploadEventsSinceFirestore() {
         Util.db.collection(Util.userId).get().addOnSuccessListener { result ->
@@ -26,7 +26,7 @@ class EventSinceInteractor(private var presenter: EventSincePresenter) :
                     dateCreated = document.getString("dateCreated")!!
                     typeEvent = document.getString("typeEvent")!!
                     notification = document.getBoolean("notification")!!
-                    id = document.getString("id")!!
+                    id = (document.get("id") as Int?)!!
                     eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id))
                 }else{
                     continue
