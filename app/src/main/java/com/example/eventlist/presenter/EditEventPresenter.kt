@@ -22,8 +22,8 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
         }
     }
 
-    override fun deleteEvent(idEvent: String) {
-        interactor.deleteEventFireStore(idEvent)
+    override fun deleteEvent(idEvent: Int) {
+        interactor.deleteEventSqlite(idEvent)
     }
 
     //INTERACTOR - PRESENTER
@@ -37,10 +37,6 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
 
     override fun deleteEventSuccesfull() {
         view.showDialogDeleteEventSuccesfull("Evento eliminado!")
-    }
-
-    override fun deleteEventError() {
-        TODO("Not yet implemented")
     }
 
     //CHECKS

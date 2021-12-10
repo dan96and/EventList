@@ -70,7 +70,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         binding.btnDeleteEvent.setOnClickListener {
             val event = intent.extras!!.getSerializable("KEY") as Event
-            showDialogConfirmDeleteEvent(event.idEvent.toString())
+            showDialogConfirmDeleteEvent(event.idEvent)
         }
 
     }
@@ -118,7 +118,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     }
 
     //Muestra el dialog de confirmacion para eliminar el evento
-    private fun showDialogConfirmDeleteEvent(idEvent: String) {
+    private fun showDialogConfirmDeleteEvent(idEvent: Int) {
         val dialogWarning = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
         dialogWarning.setTitleText("¿Estás seguro?")
             .setContentText("Recuerda que si eliminas el evento no lo vas a poder recuperar")

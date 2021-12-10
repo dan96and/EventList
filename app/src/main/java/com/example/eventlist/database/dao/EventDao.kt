@@ -19,4 +19,7 @@ interface EventDao {
 
     @Query("UPDATE Events SET notification = :notification, name = :name, date = :date, typeEvent = :eventType WHERE idEvent = :id")
     fun editEvent(id: Int, notification: Boolean, name: String, date: String, eventType: String)
+
+    @Query("UPDATE Events SET deleteEvent = 1 WHERE idEvent =:id")
+    fun deleterEvent(id: Int)
 }

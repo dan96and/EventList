@@ -12,14 +12,13 @@ interface EditEventInterface {
     interface EditEventPresenter {
         //VIEW-PRESENTER
         fun saveChangesEvent(event: Event)
-        fun deleteEvent(idEvent: String)
+        fun deleteEvent(idEvent: Int)
 
         //INTERACTOR-PRESENTER
         fun editEventCorrect()
         fun editEventError()
 
         fun deleteEventSuccesfull()
-        fun deleteEventError()
 
         //CHECK VIEW
         fun checkFieldsEmpty(title: String, date: String): Boolean
@@ -27,6 +26,6 @@ interface EditEventInterface {
 
     interface EditEventInteractor {
         fun uploadChangesEvent(event: Event)
-        fun deleteEventFireStore(idEvent: String)
+        fun deleteEventSqlite(idEvent: Int)
     }
 }
