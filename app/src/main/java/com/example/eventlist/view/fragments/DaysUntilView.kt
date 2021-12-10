@@ -31,7 +31,9 @@ class DaysUntilView : Fragment(), EventUntilInterface.EventUntilView {
     ): View {
         _binding = FragmentDaysUntilBinding.inflate(inflater, container, false)
 
-        presenter.uploadEventUntilFirestore()
+        //Descargar EventsUntil de Sqlite
+        presenter.uploadEventUntil()
+
         return binding.root
     }
 

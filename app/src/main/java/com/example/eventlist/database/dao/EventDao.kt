@@ -13,4 +13,7 @@ interface EventDao {
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventSince' AND deleteEvent = 0 ")
     fun showSinceEvents():MutableList<Event>
+
+    @Query("SELECT * FROM Events WHERE typeEvent = 'EventUntil' AND deleteEvent = 0 ")
+    fun showUntilEvents():MutableList<Event>
 }

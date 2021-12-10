@@ -10,7 +10,7 @@ interface EventUntilInterface {
     }
 
     interface EventUntilPresenter{
-        fun uploadEventUntilFirestore()
+        fun uploadEventUntil()
 
         fun uploadEventUntilSuccesfull(listEventUntil:MutableList<Event>)
 
@@ -19,6 +19,6 @@ interface EventUntilInterface {
     }
 
     interface EventUntilInteractor{
-        fun uploadEventUntilFirestore()
+        fun uploadEventUntilSqlite()
     }
 }
