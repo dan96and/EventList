@@ -21,6 +21,6 @@ interface EventSinceInterface {
     }
 
     interface EventSinceInteractor {
-        fun uploadEventsSinceFirestore()
+        fun uploadEventsSinceSqlite()
     }
 }

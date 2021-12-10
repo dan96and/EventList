@@ -12,7 +12,7 @@ class NewEventPresenter(val view: NewEventView) : NewEventInterface.NewEventPres
     private val interactor = NewEventInteractor(this)
 
     //Presenter - Interactor
-    override fun uploadEvent(event: Event) {
+    override fun newEvent(event: Event) {
         if (checkfields(event.name, event.date)) {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando presenter con el interactor..")
             interactor.addEventSqlite(event)

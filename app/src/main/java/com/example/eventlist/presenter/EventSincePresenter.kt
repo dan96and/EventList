@@ -14,7 +14,7 @@ class EventSincePresenter(private val view: DaysSinceView) :
 
     override fun uploadEventsSince() {
         Log.v(Util.TAG_SHOW_EVENTSINCE, " Comunicando presenter con interactor..")
-        interactor.uploadEventsSinceFirestore()
+        interactor.uploadEventsSinceSqlite()
     }
 
     override fun uploadEventsSinceSuccessful(eventSinceList: MutableList<Event>) {

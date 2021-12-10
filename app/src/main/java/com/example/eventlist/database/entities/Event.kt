@@ -14,6 +14,7 @@ class Event(
     var date: String = "",
     var typeEvent: String = "",
     var notification: Boolean = false,
+    var deleteEvent: Boolean = false,
     @PrimaryKey(autoGenerate = true)
     var idEvent: Int = 0
 ) : Serializable {

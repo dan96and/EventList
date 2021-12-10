@@ -26,7 +26,7 @@ class EventUntilInteractor (private val presenter : EventUntilPresenter):EventUn
                     typeEvent = document.getString("typeEvent")!!
                     notification = document.getBoolean("notification")!!
                     id = document.getString("id")!!
-                    eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id.toInt()))
+                    //eventSinceList.add(Event(name, dateCreated, date, typeEvent, notification, id.toInt()))
                 }else{
                     continue
                 }

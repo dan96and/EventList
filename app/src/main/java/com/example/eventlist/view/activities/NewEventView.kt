@@ -37,7 +37,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando view con el presenter..")
             lifecycleScope.launch {
                 withContext(Dispatchers.IO) {
-                    presenter.uploadEvent(
+                    presenter.newEvent(
                         Event(
                             name = binding.etName.text.toString().trim(),
                             dateCreation = Util.currentDate,

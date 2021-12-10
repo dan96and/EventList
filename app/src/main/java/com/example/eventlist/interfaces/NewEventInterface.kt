@@ -10,7 +10,7 @@ interface NewEventInterface {
 
     interface NewEventPresenter {
         //Presenter - Interactor
-        fun uploadEvent(event: Event)
+        fun newEvent(event: Event)
 
         //Presenter - View
         fun uploadEventCorrect()
