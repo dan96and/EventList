@@ -15,7 +15,7 @@ interface EditEventInterface {
         fun deleteEvent(idEvent: String)
 
         //INTERACTOR-PRESENTER
-        fun editEventCorrect(event: Event)
+        fun editEventCorrect()
         fun editEventError()
 
         fun deleteEventSuccesfull()

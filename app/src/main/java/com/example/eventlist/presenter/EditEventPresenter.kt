@@ -27,7 +27,7 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
     }
 
     //INTERACTOR - PRESENTER
-    override fun editEventCorrect(event: Event) {
+    override fun editEventCorrect() {
         view.showDialogEditEventSuccesfull("Cambios realizados correctamente!")
     }
 
