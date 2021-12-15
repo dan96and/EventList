@@ -1,5 +1,6 @@
 package com.example.eventlist.database.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.eventlist.database.entities.Event
 
@@ -12,7 +13,7 @@ interface EventDao {
     fun deleteEvent(id: Int)
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventSince' AND deleteEvent = 0 ")
-    fun showSinceEvents(): MutableList<Event>
+    fun showSinceEvents(): LiveData<List<Event>>
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventUntil' AND deleteEvent = 0 ")
     fun showUntilEvents(): MutableList<Event>
@@ -22,4 +23,7 @@ interface EventDao {
 
     @Query("UPDATE Events SET deleteEvent = 1 WHERE idEvent =:id")
     fun deleterEvent(id: Int)
+
+    @Query("SELECT * FROM Events WHERE deleteEvent = 0")
+    fun downloadAllEventsActives(): MutableList<Event>
 }

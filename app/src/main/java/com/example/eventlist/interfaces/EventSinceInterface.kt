@@ -1,11 +1,12 @@
 package com.example.eventlist.interfaces
 
+import androidx.lifecycle.LiveData
 import com.example.eventlist.database.entities.Event
 
 interface EventSinceInterface {
 
     interface EventSinceView {
-        fun showEventSince(eventSinceList: MutableList<Event>)
+        fun showEventSince(eventSinceList: LiveData<List<Event>>)
         fun showScreenNoEvents()
     }
 
@@ -14,10 +15,10 @@ interface EventSinceInterface {
         fun uploadEventsSince()
 
         //INTERACTOR-PRESENTER
-        fun uploadEventsSinceSuccessful(eventSinceList: MutableList<Event>)
+        fun uploadEventsSinceSuccessful(eventSinceList: LiveData<List<Event>>)
 
         //PRESENTER CHECK
-        fun checkEmptyEventList(eventSinceList: MutableList<Event>)
+        fun checkEmptyEventList(eventSinceList: LiveData<List<Event>>)
     }
 
     interface EventSinceInteractor {

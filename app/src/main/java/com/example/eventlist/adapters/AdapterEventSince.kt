@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.eventlist.R
 import com.example.eventlist.database.entities.Event
 
-class AdapterEventSince(private var eventList: MutableList<Event>) : RecyclerView.Adapter<AdapterEventSince.MyViewHolder>() {
+class AdapterEventSince(private var eventList: List<Event>) : RecyclerView.Adapter<AdapterEventSince.MyViewHolder>() {
 
     private lateinit var mListener: OnItemClickListener
 
