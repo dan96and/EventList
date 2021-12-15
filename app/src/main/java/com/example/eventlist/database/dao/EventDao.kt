@@ -16,7 +16,7 @@ interface EventDao {
     fun showSinceEvents(): LiveData<List<Event>>
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventUntil' AND deleteEvent = 0 ")
-    fun showUntilEvents(): MutableList<Event>
+    fun showUntilEvents(): LiveData<List<Event>>
 
     @Query("UPDATE Events SET notification = :notification, name = :name, date = :date, typeEvent = :eventType WHERE idEvent = :id")
     fun editEvent(id: Int, notification: Boolean, name: String, date: String, eventType: String)

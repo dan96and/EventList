@@ -17,7 +17,7 @@ class EventUntilInteractor (private val presenter : EventUntilPresenter):EventUn
                 val eventListUntil = withContext(Dispatchers.IO){ EventApp.getDB().eventDao().showUntilEvents()}
 
                 Log.v(Util.TAG_SHOW_EVENTUNTIL,"Eventos descargados correctamente. Comunicando interactor con el presenter..")
-                presenter.uploadEventUntilSuccesfull(eventListUntil)
+                //presenter.uploadEventUntilSuccesfull(eventListUntil)
             }
     }
 }

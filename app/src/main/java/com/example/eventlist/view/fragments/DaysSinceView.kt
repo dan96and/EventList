@@ -36,7 +36,6 @@ class DaysSinceView : Fragment(), EventSinceInterface.EventSinceView {
 
         binding.rvDaysSince.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        presenter.uploadEventsSince()
         EventApp.getDB().eventDao().showSinceEvents()
             .observe(viewLifecycleOwner, Observer { event ->
                 if (event.isEmpty()) {
