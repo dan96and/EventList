@@ -45,10 +45,11 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
         }
 
         binding.btnImportExportBackup.setOnClickListener {
-          view.findNavController().navigate(R.id.action_menuInformationView_to_importExportBackupView)
+            view.findNavController()
+                .navigate(R.id.action_menuInformationView_to_importExportBackupView)
         }
     }
-    
+
     //Muestra el dialog de confirmar la eliminacion de la cuenta
     private fun showDialogConfirmDeleteAccount() {
         val dialogWarning = SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
@@ -57,10 +58,10 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
             .setCancelText("Cancelar")
             .setConfirmText("Confirmar")
             .showCancelButton(true)
-            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
+            .setConfirmClickListener {
                 Log.v(Util.TAG_DELETEACCOUNT, "View comunicando con el presenter..")
                 presenter.deleteAccount()
-            })
+            }
             .show()
     }
 
@@ -71,9 +72,9 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
             .setContentText("Esperemos volver a verte pronto")
             .setConfirmText("OK")
             .showCancelButton(false)
-            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
+            .setConfirmClickListener {
                 goToHomeLoginScreen()
-            })
+            }
             .show()
     }
 

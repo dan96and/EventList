@@ -46,7 +46,7 @@
 
     //Activity - InformationView
     <string name="btn_InformationApp">App information</string>
-    <string name="btn_SuggestionBox">Suggestion box</string>
+    <string name="btn_Trash">Trash</string>
     <string name="btn_Contact">Contact</string>
     <string name="btn_ImportExportBackup">Import / Export backup</string>
     <string name="btn_DeleteAccount">Delete account</string>

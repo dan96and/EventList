@@ -1,94 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".view.fragments.MenuInformationView">
 
-    <LinearLayout
-
+    <Button
+        android:id="@+id/btnAppInformation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:elevation="10dp"
+        android:fontFamily="@font/montserratbold"
+        android:padding="16dp"
+        android:text="@string/btn_InformationApp"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnAppInformation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_InformationApp"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnSuggestionBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:padding="16dp"
+        android:text="@string/btn_Trash"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
-        <Button
-            android:id="@+id/btnSuggestionBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_SuggestionBox"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:elevation="10dp"
+        android:fontFamily="@font/montserratbold"
+        android:padding="16dp"
+        android:text="@string/btn_Contact"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnContact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_Contact"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnImportExportBackup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:elevation="10dp"
+        android:fontFamily="@font/montserratbold"
+        android:padding="16dp"
+        android:text="@string/btn_ImportExportBackup"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnImportExportBackup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_ImportExportBackup"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnDeleteAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:elevation="10dp"
+        android:fontFamily="@font/montserratbold"
+        android:padding="16dp"
+        android:text="@string/btn_DeleteAccount"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnDeleteAccount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_DeleteAccount"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/black"
+        android:drawableEnd="@drawable/ic_arrow_right"
+        android:elevation="10dp"
+        android:fontFamily="@font/montserratbold"
+        android:padding="16dp"
+        android:text="@string/btn_LogOut"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"  />
 
-        <Button
-            android:id="@+id/btnLogOut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/rounded_corners"
-            android:drawableEnd="@drawable/ic_arrow_right"
-            android:padding="16dp"
-            android:text="@string/btn_LogOut"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>
