@@ -8,5 +8,18 @@
         android:id="@+id/menuInformationView"
         android:name="com.example.eventlist.view.fragments.MenuInformationView"
         android:label="fragment_menu_information_view"
-        tools:layout="@layout/fragment_menu_information_view" />
+        tools:layout="@layout/fragment_menu_information_view" >
+        <action
+            android:id="@+id/action_menuInformationView_to_importExportBackupView"
+            app:destination="@id/importExportBackupView" />
+    </fragment>
+    <fragment
+        android:id="@+id/importExportBackupView"
+        android:name="com.example.eventlist.view.fragments.ImportExportBackupView"
+        android:label="fragment_import_export_backup_view"
+        tools:layout="@layout/fragment_import_export_backup_view" >
+        <action
+            android:id="@+id/action_importExportBackupView_to_menuInformationView"
+            app:destination="@id/menuInformationView" />
+    </fragment>
 </navigation>

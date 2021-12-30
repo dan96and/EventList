@@ -21,6 +21,7 @@ object Util {
     const val TAG_FORGOTPASSWORD = "ForgotPassword"
     const val TAG_DELETEACCOUNT = "DeleteAccount"
     const val TAG_HOME = "Home"
+    const val TAG_EXPORTIMPORTBACKUP = "ExporImportBackup"
 
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")

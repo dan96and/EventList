@@ -48,9 +48,14 @@
     <string name="btn_InformationApp">App information</string>
     <string name="btn_SuggestionBox">Suggestion box</string>
     <string name="btn_Contact">Contact</string>
+    <string name="btn_ImportExportBackup">Import / Export backup</string>
     <string name="btn_DeleteAccount">Delete account</string>
     <string name="btn_LogOut">Log out</string>
     <string name="lbl_Switch">Notification</string>
+
+    //Fragment
+    <string name="btn_ExportData">Backup</string>
+    <string name="btn_ImportData">Restore</string>
 
     //CardView
     <string name="lbl_TitleEvent">Title of the event</string>

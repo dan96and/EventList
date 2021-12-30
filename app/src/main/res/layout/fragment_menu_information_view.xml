@@ -51,6 +51,19 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/btnImportExportBackup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/rounded_corners"
+            android:drawableEnd="@drawable/ic_arrow_right"
+            android:padding="16dp"
+            android:text="@string/btn_ImportExportBackup"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/btnDeleteAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

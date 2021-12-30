@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import cn.pedant.SweetAlert.SweetAlertDialog
+import com.example.eventlist.R
 import com.example.eventlist.databinding.FragmentMenuInformationViewBinding
 import com.example.eventlist.interfaces.MenuInformationInterface
 import com.example.eventlist.presenter.MenuInformationPresenter
@@ -40,6 +42,10 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
 
         binding.btnDeleteAccount.setOnClickListener {
             showDialogConfirmDeleteAccount()
+        }
+
+        binding.btnImportExportBackup.setOnClickListener {
+          view.findNavController().navigate(R.id.action_menuInformationView_to_importExportBackupView)
         }
     }
     
