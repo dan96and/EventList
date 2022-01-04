@@ -21,6 +21,8 @@
     //Activity Home
     <string name="lbl_DaysUntil">Days Until</string>
     <string name="lbl_DaysSince">Days Since</string>
+    <string name="lbl_...">…</string>
+    <string name="lbl_plus">+</string>
 
     //Fragment - DaysUntilFragment
     <string name="lbl_title_DaysUntil">Days Until</string>
@@ -65,6 +67,7 @@
     //Activity - EditEvent
     <string name="lbl_Title_EditEvent">Edit event</string>
     <string name="lbl_btn_SaveChanges">Save changes</string>
+    <string name="lbl_btn_DeleteEvent">Delete event</string>
 
     //Fragment - DialogDeleteEventFragmentView
     <string name="lbl_Title_Question_Delete_Event">¿Estas seguro de que quieres eliminar el evento?</string>

@@ -27,6 +27,7 @@
             app:layout_constraintTop_toTopOf="@id/containerTop" />
 
         <TextView
+            android:visibility="gone"
             android:padding="16dp"
             android:id="@+id/lblNameApp"
             android:layout_width="wrap_content"

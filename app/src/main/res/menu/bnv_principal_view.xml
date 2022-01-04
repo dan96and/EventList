@@ -2,11 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/daysUntilView"
-        android:icon="@drawable/ic_twitter"
-        android:title="@string/lbl_DaysUntil" />
+        android:icon="@drawable/past"
+        android:title="@string/lbl_DaysUntil"
+        android:state_enabled="false" android:color="@color/grey"/>
 
     <item
         android:id="@+id/daysSinceView"
-        android:icon="@drawable/ic_twitter"
-        android:title="@string/lbl_DaysSince" />
+        android:icon="@drawable/future"
+        android:title="@string/lbl_DaysSince"
+        android:state_pressed="true" android:state_enabled="true" android:color="@color/grey"/>
 </menu>

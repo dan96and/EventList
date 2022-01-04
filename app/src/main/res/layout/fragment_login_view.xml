@@ -139,7 +139,6 @@
                 android:id="@+id/ibGoogle"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toStartOf="@+id/ibFacebook"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -148,7 +147,6 @@
                 android:id="@+id/ibFacebook"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toStartOf="@+id/ibTwitter"
                 app:layout_constraintStart_toEndOf="@+id/ibGoogle"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -157,7 +155,6 @@
                 android:id="@+id/ibTwitter"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:background="@drawable/ic_twitter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/ibFacebook"
                 app:layout_constraintTop_toTopOf="parent" />

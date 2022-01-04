@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_app"
     tools:context=".view.activities.NewEventView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="@font/montserratbold"
             android:padding="32dp"
             android:text="@string/btn_Cancel"
             android:textAllCaps="false"
@@ -26,7 +28,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
-            app:layout_constraintStart_toStartOf="@id/containerTop"
+            app:layout_constraintEnd_toEndOf="@id/containerTop"
             app:layout_constraintTop_toTopOf="@id/containerTop" />
 
         <TextView
@@ -37,6 +39,7 @@
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -47,17 +50,20 @@
         android:id="@+id/containerForm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineBottom"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toTopOf="@id/containerTop">
+        app:layout_constraintTop_toBottomOf="@+id/containerTop">
 
         <TextView
             android:id="@+id/tvNewEvent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratbold"
+            android:paddingBottom="16dp"
             android:text="@string/lbl_NewEvent"
+            android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,8 +74,14 @@
             android:id="@+id/etName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:elevation="8dp"
+            android:fontFamily="@font/montserratregular"
             android:hint="@string/hint_Name"
+            android:padding="8dp"
             android:paddingTop="32dp"
+            android:singleLine="true"
+            android:textCursorDrawable="@drawable/edit_cursor"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvNewEvent" />
@@ -78,11 +90,17 @@
             android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:clickable="false"
             android:focusable="false"
+            android:background="@drawable/edit_text_background"
+            android:elevation="8dp"
+            android:fontFamily="@font/montserratregular"
             android:hint="@string/hint_Date"
             android:inputType="date"
+            android:padding="8dp"
             android:paddingTop="32dp"
+            android:singleLine="true"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etName" />
@@ -95,22 +113,38 @@
             android:paddingBottom="8dp"
             android:text="@string/lbl_Switch"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
+        <Button
+            android:fontFamily="@font/montserratbold"
+            android:id="@+id/btnSaveChanges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            android:text="@string/btn_Add"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/etDate" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/btnSaveChanges"
-        android:layout_width="0dp"
+    <!-- Guidelines -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/black"
-        android:text="@string/btn_Add"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
-        app:layout_constraintStart_toStartOf="@+id/containerForm"
-        app:layout_constraintTop_toBottomOf="@+id/containerForm" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"
@@ -125,4 +159,5 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
