@@ -78,4 +78,8 @@
     <string name="lbl_NoEvents">No events!</string>
     <string name="lbl_StartByAddingSome">Start by adding some</string>
     <string name="btn_AddEvent">Add event</string>
+
+    //Fragment-DialogDeleteEvent
+    <string name="lbl_DeleteEvent">Are you sure you are eliminating the event?</string>
+    <string name="btn_Delete">Delete</string>
 </resources>

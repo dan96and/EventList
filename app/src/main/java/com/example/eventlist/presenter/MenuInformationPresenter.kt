@@ -29,7 +29,6 @@ class MenuInformationPresenter(private val view: MenuInformationView) : MenuInfo
 
     override fun deleteAccountSuccesfull() {
         Log.v(Util.TAG_DELETEACCOUNT, "Presenter comunicando con el view..")
-        view.showDialogCompleteDeleteAccount()
     }
 
 }

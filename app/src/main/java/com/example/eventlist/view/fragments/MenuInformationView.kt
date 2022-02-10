@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.findNavController
 import cn.pedant.SweetAlert.SweetAlertDialog
 import com.example.eventlist.R
@@ -41,41 +42,13 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
         }
 
         binding.btnDeleteAccount.setOnClickListener {
-            showDialogConfirmDeleteAccount()
+            Toast.makeText(context, "Eliminar botón Delete Account", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnImportExportBackup.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_menuInformationView_to_importExportBackupView)
         }
-    }
-
-    //Muestra el dialog de confirmar la eliminacion de la cuenta
-    private fun showDialogConfirmDeleteAccount() {
-        val dialogWarning = SweetAlertDialog(context, SweetAlertDialog.WARNING_TYPE)
-        dialogWarning.setTitleText("Estas seguro?")
-            .setContentText("Recuerda que si eliminas la cuenta no la vas a poder recuperar")
-            .setCancelText("Cancelar")
-            .setConfirmText("Confirmar")
-            .showCancelButton(true)
-            .setConfirmClickListener {
-                Log.v(Util.TAG_DELETEACCOUNT, "View comunicando con el presenter..")
-                presenter.deleteAccount()
-            }
-            .show()
-    }
-
-    //Muestra el dialog de que la cuenta se ha eliminado correctamente
-    override fun showDialogCompleteDeleteAccount() {
-        val dialogSuccess = SweetAlertDialog(context, SweetAlertDialog.SUCCESS_TYPE)
-        dialogSuccess.setTitleText("Cuenta eliminada :(")
-            .setContentText("Esperemos volver a verte pronto")
-            .setConfirmText("OK")
-            .showCancelButton(false)
-            .setConfirmClickListener {
-                goToHomeLoginScreen()
-            }
-            .show()
     }
 
     override fun goToHomeLoginScreen() {

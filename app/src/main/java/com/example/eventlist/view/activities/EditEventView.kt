@@ -1,15 +1,19 @@
 package com.example.eventlist.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.Dialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import cn.pedant.SweetAlert.SweetAlertDialog
+import com.example.eventlist.R
+import com.example.eventlist.database.entities.Event
 import com.example.eventlist.databinding.ActivityEditEventBinding
 import com.example.eventlist.interfaces.EditEventInterface
-import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.EditEventPresenter
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.fragments.DataPickerFragment
@@ -21,8 +25,13 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
     private val presenter = EditEventPresenter(this)
 
-    lateinit var dateSelect: Date
-    val dateCurrent: Date = Util.sdf.parse(Util.currentDate)
+    private lateinit var dateSelect: Date
+    private val dateCurrent: Date = Util.sdf.parse(Util.currentDate)
+
+    private lateinit var dialog : Dialog
+    private lateinit var btnCancel : Button
+    private lateinit var btnDeleteEvent : Button
+    private lateinit var event : Event
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +58,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
             )
         }
 
-        //Muestra el Calendario
+        //Mostrar el calendario
         binding.etDate.setOnClickListener {
             showDatePicker()
         }
@@ -64,15 +73,15 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
             }
         }
 
+        //Botón Cancelar de la pantalla
         binding.btnCancel.setOnClickListener {
-            this.finish()
+            finish()
         }
 
+        //Eliminar un evento
         binding.btnDeleteEvent.setOnClickListener {
-            val event = intent.extras!!.getSerializable("KEY") as Event
-            showDialogConfirmDeleteEvent(event.idEvent)
+           showDialog()
         }
-
     }
 
     //Poner la informacion del evento seleccionado en el recyclerview en los campos de la pantalla
@@ -110,38 +119,32 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     }
 
     override fun showDialogEditEventSuccesfull(message: String) {
-        showDialogSuccesfullDeleteOrEditEvent(message)
+        dialog.dismiss()
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     override fun showDialogDeleteEventSuccesfull(message: String) {
-        showDialogSuccesfullDeleteOrEditEvent(message)
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        finish()
     }
 
-    //Muestra el dialog de confirmacion para eliminar el evento
-    private fun showDialogConfirmDeleteEvent(idEvent: Int) {
-        val dialogWarning = SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-        dialogWarning.setTitleText("¿Estás seguro?")
-            .setContentText("Recuerda que si eliminas el evento no lo vas a poder recuperar")
-            .setCancelText("Cancelar")
-            .setConfirmText("Confirmar")
-            .showCancelButton(true)
-            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
-                Log.v(Util.TAG_DELETEACCOUNT, "View comunicando con el presenter..")
-                presenter.deleteEvent(idEvent)
-            })
-            .show()
-    }
+    //Metodos para mostrar el alertDialog
+    private fun showDialog(){
+        dialog = Dialog(this)
+        dialog.setContentView(R.layout.fragment_dialog_delete_event_view)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-    //Muestra el dialog de que el evento se ha eliminado correctamente
-    private fun showDialogSuccesfullDeleteOrEditEvent(message: String) {
-        val dialogSuccess = SweetAlertDialog(this, SweetAlertDialog.SUCCESS_TYPE)
-        dialogSuccess.setTitleText(message)
-            .setConfirmText("OK")
-            .showCancelButton(false)
-            .setConfirmClickListener(SweetAlertDialog.OnSweetClickListener {
-                finish()
-            })
-            .show()
-    }
+        btnCancel = dialog.findViewById(R.id.btnCancel)
+        btnDeleteEvent = dialog.findViewById(R.id.btnDeleteEvent)
 
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        btnDeleteEvent.setOnClickListener {
+            event = intent.extras!!.getSerializable("KEY") as Event
+            presenter.deleteEvent(event.idEvent)
+        }
+        dialog.show()
+    }
 }

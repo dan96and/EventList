@@ -4,7 +4,6 @@ interface MenuInformationInterface {
 
     interface MenuInformationView {
         fun goToHomeLoginScreen()
-        fun showDialogCompleteDeleteAccount()
     }
 
     interface MenuInformationPresenter {
