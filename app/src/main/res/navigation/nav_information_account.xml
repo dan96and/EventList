@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_menuInformationView_to_importExportBackupView"
             app:destination="@id/importExportBackupView" />
+        <action
+            android:id="@+id/action_menuInformationView_to_contactView"
+            app:destination="@id/contactView" />
     </fragment>
     <fragment
         android:id="@+id/importExportBackupView"
@@ -20,6 +23,15 @@
         tools:layout="@layout/fragment_import_export_backup_view" >
         <action
             android:id="@+id/action_importExportBackupView_to_menuInformationView"
+            app:destination="@id/menuInformationView" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactView"
+        android:name="com.example.eventlist.view.fragments.ContactView"
+        android:label="fragment_contact_view"
+        tools:layout="@layout/fragment_contact_view" >
+        <action
+            android:id="@+id/action_contactView_to_menuInformationView"
             app:destination="@id/menuInformationView" />
     </fragment>
 </navigation>

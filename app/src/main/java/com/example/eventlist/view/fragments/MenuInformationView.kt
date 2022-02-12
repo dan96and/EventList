@@ -49,6 +49,10 @@ class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformati
             view.findNavController()
                 .navigate(R.id.action_menuInformationView_to_importExportBackupView)
         }
+
+        binding.btnContact.setOnClickListener {
+            view.findNavController().navigate(R.id.action_menuInformationView_to_contactView)
+        }
     }
 
     override fun goToHomeLoginScreen() {

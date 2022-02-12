@@ -100,13 +100,34 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="contactView">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="331" />
+                            <option name="y" value="-392" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_contactView_to_menuInformationView">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="importExportBackupView">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="541" />
-                            <option name="y" value="23" />
+                            <option name="x" value="347" />
+                            <option name="y" value="-4" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -126,12 +147,17 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="355" />
-                            <option name="y" value="24" />
+                            <option name="x" value="-107" />
+                            <option name="y" value="-291" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_menuInformationView_to_contactView">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_menuInformationView_to_importExportBackupView">
                               <value>
                                 <LayoutPositions />
