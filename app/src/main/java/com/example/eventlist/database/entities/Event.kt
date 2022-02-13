@@ -10,6 +10,7 @@ import java.util.*
 @Entity(tableName = "Events")
 class Event(
     var name: String = "",
+    var description: String = "",
     var dateCreation: String = "",
     var date: String = "",
     var typeEvent: String = "",

@@ -87,14 +87,32 @@
             app:layout_constraintTop_toBottomOf="@+id/tvNewEvent" />
 
         <EditText
+            android:id="@+id/etDescription"
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_text_background"
+            android:elevation="8dp"
+            android:fontFamily="@font/montserratregular"
+            android:gravity="top"
+            android:hint="@string/hint_Description"
+            android:inputType="textMultiLine"
+            android:padding="8dp"
+            android:paddingTop="32dp"
+            android:textCursorDrawable="@drawable/edit_cursor"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <EditText
             android:id="@+id/etDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:clickable="false"
-            android:focusable="false"
             android:background="@drawable/edit_text_background"
+            android:clickable="false"
             android:elevation="8dp"
+            android:focusable="false"
             android:fontFamily="@font/montserratregular"
             android:hint="@string/hint_Date"
             android:inputType="date"
@@ -103,7 +121,7 @@
             android:singleLine="true"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etName" />
+            app:layout_constraintTop_toBottomOf="@+id/etDescription" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/switchNotification"
@@ -119,12 +137,12 @@
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
         <Button
-            android:fontFamily="@font/montserratbold"
             android:id="@+id/btnSaveChanges"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@color/black"
+            android:fontFamily="@font/montserratbold"
             android:text="@string/btn_Add"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/etDate" />

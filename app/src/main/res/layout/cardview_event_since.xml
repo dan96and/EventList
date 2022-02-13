@@ -24,6 +24,15 @@
                 android:text="@string/lbl_TitleEvent" />
 
             <TextView
+                android:textColor="@color/black"
+                android:id="@+id/cvDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserratregular"
+                android:text="@string/hint_Description"
+                android:paddingTop="4dp"/>
+
+            <TextView
                 android:fontFamily="@font/montserratregular"
                 android:paddingTop="4dp"
                 android:id="@+id/cvDate"

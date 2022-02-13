@@ -44,6 +44,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
                             date = binding.etDate.text.toString().trim(),
                             typeEvent = checkTypeEvent(),
                             notification = binding.switchNotification.isChecked,
+                            description = binding.etDescription.text.toString().trim()
                         )
                     )
                 }

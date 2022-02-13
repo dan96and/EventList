@@ -48,11 +48,11 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
             val event = intent.extras!!.getSerializable("KEY") as Event
             presenter.saveChangesEvent(
                 Event(
-                    binding.etName.text.toString().trim(),
-                    "",
-                    binding.etDate.text.toString().trim(),
-                    checkTypeEvent(),
-                    Util.checkValueSwitchNotification(binding.switchNotification.isChecked),
+                    name = binding.etName.text.toString().trim(),
+                    description = binding.etDescription.text.toString().trim(),
+                    date= binding.etDate.text.toString().trim(),
+                    typeEvent = checkTypeEvent(),
+                    notification = Util.checkValueSwitchNotification(binding.switchNotification.isChecked),
                     idEvent = event.idEvent
                 )
             )
@@ -89,6 +89,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
         val event = intent.extras!!.getSerializable("KEY") as Event
         binding.etDate.setText(event!!.date)
         binding.etName.setText(event.name)
+        binding.etDescription.setText(event.description)
         binding.switchNotification.isChecked = event.notification
     }
 
@@ -119,7 +120,6 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     }
 
     override fun showDialogEditEventSuccesfull(message: String) {
-        dialog.dismiss()
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 

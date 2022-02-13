@@ -22,7 +22,8 @@ class EditEventInteractor(val presenter: EditEventPresenter) :
                     event.notification,
                     event.name,
                     event.date,
-                    event.typeEvent
+                    event.typeEvent,
+                    event.description,
                 )
             }
             Log.v(
