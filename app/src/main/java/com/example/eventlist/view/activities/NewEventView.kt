@@ -82,12 +82,15 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
 
     //CHECKS
     private fun checkTypeEvent(): String {
-        dateSelect = Util.sdf.parse(binding.etDate.text.toString())
-        return if (dateSelect.before(dateCurrent)) {
-            "EventSince"
-        } else {
-            "EventUntil"
+        if(binding.etDate.text.toString() != ""){
+            dateSelect = Util.sdf.parse(binding.etDate.text.toString())
+            return if (dateSelect.before(dateCurrent)) {
+                "EventSince"
+            } else {
+                "EventUntil"
+            }
         }
+        return ""
     }
 
     //OVERRIDE METHODS VIEW

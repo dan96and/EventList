@@ -31,10 +31,10 @@ class Event(
         val dateSelect: Date = sdf.parse(date)
         val dateCurrent: Date = sdf.parse(Util.currentDate)
 
-        if (typeEvent == "EventUntil") {
-            diffMiliseconds = dateSelect.time - dateCurrent.time
-        } else {
+        if (typeEvent != "EventUntil") {
             diffMiliseconds = dateCurrent.time - dateSelect.time
+        } else {
+            diffMiliseconds = dateSelect.time - dateCurrent.time
         }
 
         val diffDays: Long = ((((diffMiliseconds / 1000) / 60) / 60) / 24)
@@ -50,36 +50,42 @@ class Event(
         var result: String = ""
 
         result += when (years) {
-            1 -> "• $years año "
+            1 -> "• $years year "
             0 -> ""
             else -> {
-                "• $years años "
+                "• $years years "
             }
         }
 
         result += when (months) {
-            1 -> "• $months mes "
+            1 -> "• $months month "
             0 -> ""
             else -> {
-                "• $months meses "
+                "• $months months "
             }
         }
 
         result += when (weeks) {
-            1 -> "• $weeks semana "
+            1 -> "• $weeks week "
             0 -> ""
             else -> {
-                "• $weeks semanas "
+                "• $weeks weeks "
             }
         }
 
         result += when (days) {
-            1 -> "• $days día "
+            1 -> "• $days day "
             0 -> ""
             else -> {
-                "• $days días "
+                "• $days days "
             }
         }
+        
+        //Si los dias, meses, semanas y años son igual a 0, mostrar el siguiente mensaje
+        if (days == 0 && months == 0 && weeks == 0 && years == 0){
+            result = "TODAY IS THE DAY"
+        }
+
         return result
     }
 }

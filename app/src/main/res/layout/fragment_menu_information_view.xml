@@ -49,49 +49,4 @@
         android:textAlignment="textStart"
         android:textColor="@color/white" />
 
-    <Button
-        android:id="@+id/btnImportExportBackup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/black"
-        android:drawableEnd="@drawable/ic_arrow_right"
-        android:elevation="10dp"
-        android:fontFamily="@font/montserratbold"
-        android:padding="16dp"
-        android:text="@string/btn_ImportExportBackup"
-        android:textAlignment="textStart"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/btnDeleteAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/black"
-        android:drawableEnd="@drawable/ic_arrow_right"
-        android:elevation="10dp"
-        android:fontFamily="@font/montserratbold"
-        android:padding="16dp"
-        android:text="@string/btn_DeleteAccount"
-        android:textAlignment="textStart"
-        android:textColor="@color/white" />
-
-    <Button
-        android:id="@+id/btnLogOut"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/black"
-        android:drawableEnd="@drawable/ic_arrow_right"
-        android:elevation="10dp"
-        android:fontFamily="@font/montserratbold"
-        android:padding="16dp"
-        android:text="@string/btn_LogOut"
-        android:textAlignment="textStart"
-        android:textColor="@color/white"/>
-
 </LinearLayout>

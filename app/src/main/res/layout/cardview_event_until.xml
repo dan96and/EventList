@@ -59,7 +59,7 @@
                     android:fontFamily="@font/montserratbold"
                     android:paddingTop="4dp"
                     android:text="@string/lbl_Time_Different"
-                    android:textColor="@color/main_blue_color" />
+                    android:textColor="@color/purple_700" />
 
             </LinearLayout>
 

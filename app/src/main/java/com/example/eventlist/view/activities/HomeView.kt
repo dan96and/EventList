@@ -1,14 +1,13 @@
 package com.example.eventlist.view.activities
 
+import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.eventlist.R
 import com.example.eventlist.databinding.ActivityHomeViewBinding
 import com.example.eventlist.interfaces.HomeInterface
-import com.example.eventlist.database.entities.Event
 import com.example.eventlist.presenter.HomePresenter
 import com.example.eventlist.util.Util
 
@@ -22,9 +21,6 @@ class HomeView : AppCompatActivity(), HomeInterface.HomeView {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        Log.v(Util.TAG_HOME, "Descargar eventos. Comunicando view con presenter..")
-        presenter.downloadAllEvents()
 
         //BottomNavMenu
         setupBottomNavMenu()
@@ -42,11 +38,4 @@ class HomeView : AppCompatActivity(), HomeInterface.HomeView {
         binding.bottomNavigationView.setupWithNavController(navController)
     }
 
-    override fun showLog(message: String) {
-        Log.v(Util.TAG_HOME, message)
-    }
-
-    override fun implementsCommunicationWithSQLite(EventList: MutableList<Event>) {
-        presenter.importEvents(EventList, this)
-    }
 }
