@@ -31,10 +31,10 @@ class Event(
         val dateSelect: Date = sdf.parse(date)
         val dateCurrent: Date = sdf.parse(Util.currentDate)
 
-        if (typeEvent != "EventUntil") {
-            diffMiliseconds = dateCurrent.time - dateSelect.time
+        diffMiliseconds = if (typeEvent != "EventUntil") {
+            dateCurrent.time - dateSelect.time
         } else {
-            diffMiliseconds = dateSelect.time - dateCurrent.time
+            dateSelect.time - dateCurrent.time
         }
 
         val diffDays: Long = ((((diffMiliseconds / 1000) / 60) / 60) / 24)
@@ -47,7 +47,7 @@ class Event(
     }
 
     private fun getStringResult(years: Int, months: Int, weeks: Int, days: Int): String {
-        var result: String = ""
+        var result = ""
 
         result += when (years) {
             1 -> "• $years year "
