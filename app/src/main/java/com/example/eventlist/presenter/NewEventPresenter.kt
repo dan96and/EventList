@@ -18,7 +18,7 @@ class NewEventPresenter(val view: NewEventView) : NewEventInterface.NewEventPres
             interactor.addEventSqlite(event)
         } else {
             Log.v(Util.TAG_NEW_EVENT, "Comunicando presenter con view..")
-            view.showMessage("Campos vacios")
+            view.showMessage("Required fields must be completed")
         }
     }
 

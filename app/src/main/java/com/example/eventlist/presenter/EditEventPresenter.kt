@@ -18,7 +18,7 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
             interactor.uploadChangesEvent(event)
         }else{
             Log.v(Util.TAG_NEW_EVENT,"Comunicando presentador con el vista..")
-            view.showMessage("Hay campos vacios")
+            view.showMessage("Required fields must be completed ")
         }
     }
 
@@ -28,15 +28,15 @@ class EditEventPresenter(val view: EditEventView) : EditEventInterface.EditEvent
 
     //INTERACTOR - PRESENTER
     override fun editEventCorrect() {
-        view.showDialogEditEventSuccesfull("Cambios realizados correctamente!")
+        view.showDialogEditEventSuccesfull("Changes made successfully!")
     }
 
     override fun editEventError() {
-        view.showMessage("Error al guardar los cambios")
+        view.showMessage("Error saving changes")
     }
 
     override fun deleteEventSuccesfull() {
-        view.showDialogDeleteEventSuccesfull("Evento eliminado!")
+        view.showDialogDeleteEventSuccesfull("Event removed!")
     }
 
     //CHECKS

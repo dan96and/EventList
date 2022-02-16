@@ -2,7 +2,6 @@ package com.example.eventlist.objects
 
 import android.app.Application
 
-
 class EventApp : Application() {
 
     companion object {

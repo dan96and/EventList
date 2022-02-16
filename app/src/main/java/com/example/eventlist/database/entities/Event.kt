@@ -85,6 +85,11 @@ class Event(
         if (days == 0 && months == 0 && weeks == 0 && years == 0){
             result = "TODAY IS THE DAY"
         }
+        
+        //Si los dias, meses, semanas y años son menores que 0, indicara que el evento se ha pasado de fecha
+        if (days < 0 || months < 0 || weeks < 0 || years < 0){
+            result = "The event is out of date"
+        }
 
         return result
     }

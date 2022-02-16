@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="16dp"
+            android:padding="32dp"
             android:src="@drawable/ic_arrow_before"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
             app:layout_constraintStart_toStartOf="@id/containerTop"
@@ -51,8 +51,10 @@
         app:defaultNavHost="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/containerTop"
+        app:layout_constraintVertical_bias="1.0"
         app:navGraph="@navigation/nav_information_account" />
 
     <androidx.constraintlayout.widget.Guideline

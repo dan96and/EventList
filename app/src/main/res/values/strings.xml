@@ -41,9 +41,9 @@
     //Activity - New event
     <string name="lbl_NewEvent">New event</string>
     <string name="btn_Cancel">Cancel</string>
-    <string name="hint_Name">Name</string>
+    <string name="hint_Name">* Name</string>
     <string name="hint_Description">Description</string>
-    <string name="hint_Date">Date</string>
+    <string name="hint_Date">* Date</string>
     <string name="hint_Icon">Icon</string>
     <string name="btn_Add">Add</string>
 

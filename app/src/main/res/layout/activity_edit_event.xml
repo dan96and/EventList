@@ -52,11 +52,10 @@
         android:id="@+id/containerForm"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:padding="8dp"
         app:layout_constraintBottom_toTopOf="@+id/btnDeleteEvent"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/containerTop">
+        app:layout_constraintTop_toTopOf="@+id/containerTop">
 
         <TextView
             android:id="@+id/tvEditEvent"
@@ -178,7 +177,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.9" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"
