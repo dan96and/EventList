@@ -5,7 +5,7 @@
 **EventList** es una aplicación gratuita para gestionar eventos.
 La aplicación dispone de dos tipos de eventos:
 - EventUntil: Para eventos que vamos a realizar en un futuro y queremos saber cuanto tiempo queda.
-- EventUntil: Para eventos que llevamos realizando un tiempo, podremos ver su duración.
+- EventSince: Para eventos que llevamos realizando un tiempo, podremos ver su duración.
 
 Actualmente Eventlist solo esta disponible para dispositivos **Android**.
 
