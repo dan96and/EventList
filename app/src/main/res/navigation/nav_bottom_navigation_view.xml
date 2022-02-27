@@ -7,18 +7,18 @@
 
     <fragment
         android:id="@+id/daysUntilView"
-        android:name="com.example.eventlist.view.fragments.DaysUntilView"
+        android:name="com.danieland.eventlist.view.fragments.DaysUntilView"
         android:label="fragment_days_until"
         tools:layout="@layout/fragment_days_until" />
 
     <fragment
         android:id="@+id/daysSinceView"
-        android:name="com.example.eventlist.view.fragments.DaysSinceView"
+        android:name="com.danieland.eventlist.view.fragments.DaysSinceView"
         android:label="fragment_days_since"
         tools:layout="@layout/fragment_days_since" />
     <fragment
         android:id="@+id/emptyEventsView"
-        android:name="com.example.eventlist.view.fragments.EmptyEventsView"
+        android:name="com.danieland.eventlist.view.fragments.EmptyEventsView"
         android:label="fragment_empty_events_view"
         tools:layout="@layout/fragment_empty_events_view" />
 </navigation>

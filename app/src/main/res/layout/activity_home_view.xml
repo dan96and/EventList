@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_app"
-    tools:context=".view.activities.HomeView">
+    tools:context="com.danieland.eventlist.view.activities.HomeView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerTop"

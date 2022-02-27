@@ -6,7 +6,7 @@
     app:startDestination="@id/menuInformationView">
     <fragment
         android:id="@+id/menuInformationView"
-        android:name="com.example.eventlist.view.fragments.MenuInformationView"
+        android:name="com.danieland.eventlist.view.fragments.MenuInformationView"
         android:label="fragment_menu_information_view"
         tools:layout="@layout/fragment_menu_information_view">
         <action
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/contactView"
-        android:name="com.example.eventlist.view.fragments.ContactView"
+        android:name="com.danieland.eventlist.view.fragments.ContactView"
         android:label="fragment_contact_view"
         tools:layout="@layout/fragment_contact_view">
         <action
