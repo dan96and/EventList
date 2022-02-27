@@ -86,8 +86,8 @@
 
     //Fragment-Contact
     <string name="lbl_By">by</string>
-    <string name="lbl_DescContact1">Hola! Mi nombre es Daniel Andrés Bacho, soy el creador de EventList.</string>
-    <string name="lbl_DescContact2">Esta App la he desarrollado como proyecto personal, para poder demostrar mi conocimiento.</string>
-    <string name="lbl_DescContact3">Si quieres contactar conmigo o dejarme algun tipo de sugerencia para mejorar, puedes encontrarme en las siguientes redes sociales.</string>
-    <string name="lbl_DescContact4">Muchas gracias!</string>
+    <string name="lbl_DescContact1">Hello! My name is Daniel Andrés Bacho, I\'m the creator of EventList.</string>
+    <string name="lbl_DescContact2">I have developed this app as a personal project, in order to demonstrate my knowledge.</string>
+    <string name="lbl_DescContact3">If you want to contact me or leave any suggestions for improvement, you can find me at the following links.</string>
+    <string name="lbl_DescContact4">Thank you very much!</string>
 </resources>

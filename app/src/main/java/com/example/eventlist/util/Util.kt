@@ -13,7 +13,6 @@ object Util {
     const val TAG_SHOW_EVENTUNTIL = "ShowEventUntil"
     const val TAG_SHOW_DELETEEVENT = "DeleteEvent"
 
-
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")
     val currentDate = sdf.format(Date()).toString()

@@ -13,13 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.eventlist.R
 import com.example.eventlist.adapters.AdapterEventUntil
 import com.example.eventlist.databinding.FragmentDaysUntilBinding
-import com.example.eventlist.interfaces.EventUntilInterface
-import com.example.eventlist.database.entities.Event
 import com.example.eventlist.objects.EventApp
 import com.example.eventlist.util.Util
 import com.example.eventlist.view.activities.EditEventView
 
-class DaysUntilView : Fragment(), EventUntilInterface.EventUntilView {
+class DaysUntilView : Fragment() {
 
     private var _binding: FragmentDaysUntilBinding? = null
     private val binding get() = _binding!!
@@ -61,17 +59,6 @@ class DaysUntilView : Fragment(), EventUntilInterface.EventUntilView {
             })
 
         return binding.root
-    }
-
-    override fun showEventUntil(listEventUntil: MutableList<Event>) {
-
-        Log.v(Util.TAG_SHOW_EVENTUNTIL, "Mostrando recyclerview en la vista..")
-
-    }
-
-    //Mostrar FragmentNoEvents
-    override fun showScreenNoEvents() {
-        view?.findNavController()?.navigate(R.id.emptyEventsView)
     }
 
     override fun onDestroyView() {

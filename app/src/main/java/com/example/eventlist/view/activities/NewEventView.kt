@@ -23,8 +23,8 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
     private lateinit var binding: ActivityNewEventViewBinding
     private var presenter = NewEventPresenter(this)
 
-    lateinit var dateSelect: Date
-    val dateCurrent: Date = Util.sdf.parse(Util.currentDate)
+    private lateinit var dateSelect: Date
+    private val dateCurrent: Date = Util.sdf.parse(Util.currentDate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

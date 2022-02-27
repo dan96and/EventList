@@ -8,15 +8,11 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.eventlist.R
 import com.example.eventlist.databinding.FragmentMenuInformationViewBinding
-import com.example.eventlist.interfaces.MenuInformationInterface
-import com.example.eventlist.presenter.MenuInformationPresenter
 
-class MenuInformationView() : Fragment(), MenuInformationInterface.MenuInformationView {
+class MenuInformationView() : Fragment() {
 
     private var _binding: FragmentMenuInformationViewBinding? = null
     private val binding get() = _binding!!
-
-    private val presenter = MenuInformationPresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
