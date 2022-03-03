@@ -1,7 +1,5 @@
 package com.danieland.eventlist.util
 
-import android.content.Context
-import android.content.Intent
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -16,12 +14,6 @@ object Util {
     //GET CURRENT DATE
     val sdf = SimpleDateFormat("dd/MM/yyyy")
     val currentDate = sdf.format(Date()).toString()
-
-    //FUNCTIONS
-    fun openActivity(context: Context?, clase: Class<*>) {
-        val intent = Intent(context, clase)
-        context?.startActivity(intent)
-    }
 
     fun checkValueSwitchNotification(valueSwitch: Boolean): Boolean {
         return valueSwitch

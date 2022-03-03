@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import danieland.eventlist.R
 import com.danieland.eventlist.database.entities.Event
+import com.danieland.eventlist.extensions.toast
 import com.danieland.eventlist.interfaces.EditEventInterface
 import com.danieland.eventlist.presenter.EditEventPresenter
 import com.danieland.eventlist.util.Util
@@ -116,15 +117,15 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
     //METHODS OVERRIDE
     override fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        toast(message)
     }
 
     override fun showDialogEditEventSuccesfull(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        toast(message)
     }
 
     override fun showDialogDeleteEventSuccesfull(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+        toast(message)
         finish()
     }
 

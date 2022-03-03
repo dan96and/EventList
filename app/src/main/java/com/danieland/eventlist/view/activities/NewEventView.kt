@@ -9,6 +9,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import com.danieland.eventlist.interfaces.NewEventInterface
 import com.danieland.eventlist.database.entities.Event
+import com.danieland.eventlist.extensions.toast
 import com.danieland.eventlist.presenter.NewEventPresenter
 import com.danieland.eventlist.util.Util
 import com.danieland.eventlist.view.fragments.DataPickerFragment
@@ -96,7 +97,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
     //OVERRIDE METHODS VIEW
     override fun showMessage(message: String) {
         this.runOnUiThread(Runnable {
-            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+            toast(message)
         })
     }
 }

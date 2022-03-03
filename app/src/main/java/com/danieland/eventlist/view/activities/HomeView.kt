@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.danieland.eventlist.extensions.openActivity
 import com.danieland.eventlist.util.Util
 import danieland.eventlist.R
 import danieland.eventlist.databinding.ActivityHomeViewBinding
@@ -22,10 +23,10 @@ class HomeView : AppCompatActivity() {
         setupBottomNavMenu()
         binding.bottomNavigationView.setOnItemReselectedListener { }
         binding.btnAddEvent.setOnClickListener {
-            Util.openActivity(this, NewEventView()::class.java)
+            openActivity(NewEventView()::class.java)
         }
         binding.btnInformation.setOnClickListener {
-            Util.openActivity(this, InformationView::class.java)
+            openActivity(InformationView::class.java)
         }
     }
 

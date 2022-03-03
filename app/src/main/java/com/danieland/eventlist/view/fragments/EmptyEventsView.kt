@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.danieland.eventlist.util.Util
+import com.danieland.eventlist.extensions.openActivitySinceFragment
 import com.danieland.eventlist.view.activities.NewEventView
 import danieland.eventlist.databinding.FragmentEmptyEventsViewBinding
 
@@ -27,7 +27,7 @@ class EmptyEventsView : Fragment() {
 
         //Abrir la actividad
         binding.btnAddEvent.setOnClickListener {
-            Util.openActivity(context, NewEventView::class.java)
+            openActivitySinceFragment(NewEventView::class.java)
         }
     }
 }
