@@ -32,10 +32,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/grey"
+            android:backgroundTint="@color/grey"
             android:fontFamily="@font/montserratbold"
             android:text="@string/btn_Cancel"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/btnDeleteEvent"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            android:background="@color/red"
+            android:backgroundTint="@color/red"
             android:fontFamily="@font/montserratbold"
             android:text="@string/btn_Delete"
             android:textColor="@color/white" />

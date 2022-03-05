@@ -16,6 +16,8 @@
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/drawable/ic_name1_toggle_bg.xml" value="0.22314814814814815" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/drawable/rounded_corners.xml" value="0.24027777777777778" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/drawable/splash_screen.xml" value="0.1945" />
+        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout-v29/activity_edit_event.xml" value="0.259375" />
+        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout-v29/activity_home_view.xml" value="0.4166666666666667" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_edit_event.xml" value="0.264" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_home_view.xml" value="0.264" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/activity_information_view.xml" value="0.264" />
@@ -36,7 +38,7 @@
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_login_view.xml" value="0.264" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_menu_information_view.xml" value="0.25" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/layout/fragment_register_view.xml" value="0.264" />
-        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/menu/bnv_principal_view.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/menu/bnv_principal_view.xml" value="0.1" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/menu/menu_bottom_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dandr/AndroidStudioProjects/EventList/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
       </map>

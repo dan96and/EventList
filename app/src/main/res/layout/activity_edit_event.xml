@@ -13,35 +13,34 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineBottom"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:fontFamily="@font/montserratbold"
             android:id="@+id/btnCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:padding="32dp"
-            android:text="@string/btn_Cancel"
+            android:fontFamily="@font/montserratbold"
+            android:padding="16dp"
+            android:text="X"
             android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
-            app:layout_constraintEnd_toEndOf="@id/containerTop"
+            app:layout_constraintStart_toStartOf="@id/containerTop"
             app:layout_constraintTop_toTopOf="@id/containerTop" />
 
         <TextView
-            android:visibility="gone"
-            android:fontFamily="@font/montserratregular"
             android:id="@+id/lblNameApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserratregular"
             android:text="@string/app_name"
             android:textColor="@color/black"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/containerTop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -62,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserratbold"
+            android:gravity="center"
             android:paddingBottom="16dp"
             android:text="@string/lbl_Title_EditEvent"
             android:textColor="@color/black"
@@ -138,12 +138,13 @@
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
 
         <Button
-            android:fontFamily="@font/montserratbold"
             android:id="@+id/btnSaveChanges"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/black"
+            android:padding="12dp"
+            android:backgroundTint="@color/black"
+            android:fontFamily="@font/montserratbold"
             android:text="@string/lbl_btn_SaveChanges"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/etDate" />
@@ -152,17 +153,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:fontFamily="@font/montserratbold"
+        android:padding="12dp"
+        android:backgroundTint="@color/red"
         android:id="@+id/btnDeleteEvent"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:background="@color/red"
+        android:fontFamily="@font/montserratbold"
         android:text="@string/lbl_btn_DeleteEvent"
         android:textColor="@color/white"
-        app:layout_constraintRight_toRightOf="@id/guidelineRight"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
         app:layout_constraintLeft_toLeftOf="@id/guidelineLeft"
-        app:layout_constraintBottom_toTopOf="@id/guidelineBottom" />
+        app:layout_constraintRight_toRightOf="@id/guidelineRight" />
 
     <!-- Guidelines -->
     <androidx.constraintlayout.widget.Guideline
@@ -177,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.95" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineRight"

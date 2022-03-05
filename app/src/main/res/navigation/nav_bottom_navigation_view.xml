@@ -3,19 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_bottom_navigation_view"
-    app:startDestination="@id/daysUntilView">
+    app:startDestination="@id/daysSinceView">
 
     <fragment
         android:id="@+id/daysUntilView"
         android:name="com.danieland.eventlist.view.fragments.DaysUntilView"
         android:label="fragment_days_until"
-        tools:layout="@layout/fragment_days_until" />
+        tools:layout="@layout/fragment_days_until">
+        <action
+            android:id="@+id/action_daysUntilView_to_emptyEventsView"
+            app:destination="@id/emptyEventsView" />
+    </fragment>
 
     <fragment
         android:id="@+id/daysSinceView"
         android:name="com.danieland.eventlist.view.fragments.DaysSinceView"
         android:label="fragment_days_since"
-        tools:layout="@layout/fragment_days_since" />
+        tools:layout="@layout/fragment_days_since">
+        <action
+            android:id="@+id/action_daysSinceView_to_emptyEventsView"
+            app:destination="@id/emptyEventsView" />
+    </fragment>
+
     <fragment
         android:id="@+id/emptyEventsView"
         android:name="com.danieland.eventlist.view.fragments.EmptyEventsView"

@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.lifecycleScope
 import com.danieland.eventlist.interfaces.NewEventInterface
 import com.danieland.eventlist.database.entities.Event
+import com.danieland.eventlist.extensions.openActivity
 import com.danieland.eventlist.extensions.toast
 import com.danieland.eventlist.presenter.NewEventPresenter
 import com.danieland.eventlist.util.Util
@@ -62,7 +62,8 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
         }
 
         binding.btnCancel.setOnClickListener {
-            this.finish()
+            openActivity(HomeView::class.java)
+            finish()
         }
 
         binding.etDate.setOnClickListener {
@@ -83,7 +84,7 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
 
     //CHECKS
     private fun checkTypeEvent(): String {
-        if(binding.etDate.text.toString() != ""){
+        if (binding.etDate.text.toString() != "") {
             dateSelect = Util.sdf.parse(binding.etDate.text.toString())
             return if (dateSelect.before(dateCurrent)) {
                 "EventSince"
@@ -98,6 +99,15 @@ class NewEventView : AppCompatActivity(), NewEventInterface.NewEventView {
     override fun showMessage(message: String) {
         this.runOnUiThread(Runnable {
             toast(message)
+            binding.etName.text.clear()
+            binding.etDescription.text.clear()
+            binding.etDate.text.clear()
         })
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        openActivity(HomeView::class.java)
+        finish()
     }
 }

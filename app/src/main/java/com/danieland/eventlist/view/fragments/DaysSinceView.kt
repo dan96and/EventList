@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.danieland.eventlist.adapters.AdapterEventSince
-
 import com.danieland.eventlist.objects.EventApp
 import com.danieland.eventlist.util.Util
 import com.danieland.eventlist.view.activities.EditEventView
@@ -30,13 +29,13 @@ class DaysSinceView : Fragment() {
     ): View {
         _binding = FragmentDaysSinceBinding.inflate(inflater, container, false)
 
-        binding.rvDaysSince.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvDaysSince.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         EventApp.getDB().eventDao().showSinceEvents()
             .observe(viewLifecycleOwner, Observer { event ->
                 if (event.isEmpty()) {
-                    view?.findNavController()?.navigate(R.id.emptyEventsView)
-
+                    view?.findNavController()?.navigate(R.id.action_daysSinceView_to_emptyEventsView)
                 } else {
                     adapterSince = AdapterEventSince(event)
                     binding.rvDaysSince.adapter = adapterSince

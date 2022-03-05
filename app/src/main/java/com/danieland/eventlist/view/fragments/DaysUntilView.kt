@@ -36,7 +36,7 @@ class DaysUntilView : Fragment() {
         EventApp.getDB().eventDao().showUntilEvents()
             .observe(viewLifecycleOwner, Observer { event ->
                 if (event.isEmpty()) {
-                    view?.findNavController()?.navigate(R.id.emptyEventsView)
+                    view?.findNavController()?.navigate(R.id.action_daysUntilView_to_emptyEventsView)
 
                 } else {
                     adapterUtil = AdapterEventUntil(event)
