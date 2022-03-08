@@ -3,77 +3,63 @@ package com.danieland.eventlist.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import danieland.eventlist.R
 import com.danieland.eventlist.database.entities.Event
+import danieland.eventlist.R
+import danieland.eventlist.databinding.CardviewEventUntilBinding
 
-class AdapterEventUntil(private var eventList: List<Event>) :
+class AdapterEventUntil(private var eventList: List<Event>, private val listener: (Event) -> Unit) :
     RecyclerView.Adapter<AdapterEventUntil.MyViewHolder>() {
-
-    private lateinit var mListener: OnItemClickListener
-
-    interface OnItemClickListener {
-        fun onItemClick(position: Int)
-    }
-
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        mListener = listener
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view =
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.cardview_event_until, parent, false)
 
-        return MyViewHolder(view, mListener)
+        return MyViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val arrayEvents = eventList[position]
-        holder.bind(arrayEvents)
+        val item = eventList[position]
+        holder.bind(item)
+        holder.itemView.setOnClickListener {
+            listener(item)
+        }
     }
 
-    override fun getItemCount(): Int {
-        return eventList.size
-    }
+    override fun getItemCount(): Int = eventList.size
 
-    class MyViewHolder(view: View, listener: OnItemClickListener) :
+    class MyViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
 
-        private val title = view.findViewById(R.id.cvTitle) as TextView
-        private val description = view.findViewById(R.id.cvDescription) as TextView
-        private val date = view.findViewById(R.id.cvDate) as TextView
-        private val timeDifferent = view.findViewById(R.id.cvTimeDifferent) as TextView
-        private val notification = view.findViewById(R.id.ivNotification) as ImageView
+        private var binding = CardviewEventUntilBinding.bind(view)
 
         fun bind(event: Event) {
-            title.text = event.name
-            checkDescriptionIsEmpty(event.description, description)
-            date.text = event.getStringDateCreationAndDate()
-            timeDifferent.text = event.getTimeDifferentBetweenDates()
-            if (!event.notification) {
-                notification.setBackgroundResource(R.drawable.ic_notification_desactive)
-            } else {
-                notification.setBackgroundResource(R.drawable.ic_notification_active)
+            with(binding) {
+                cvTitle.text = event.name
+                cvDate.text = event.getStringDateCreationAndDate()
+                cvTimeDifferent.text = event.getTimeDifferentBetweenDates()
             }
+            checkDescriptionIsEmpty(event.description)
+            //checkNotification(event)
         }
 
-        init {
-            view.setOnClickListener {
-                listener.onItemClick(adapterPosition)
+        //Validar si el Evento tiene notificacion
+        private fun checkNotification(event: Event) {
+            if (!event.notification) {
+                binding.ivNotification.setBackgroundResource(R.drawable.ic_notification_desactive)
+            } else {
+                binding.ivNotification.setBackgroundResource(R.drawable.ic_notification_active)
             }
         }
 
         //Validar si una descripción es vacia, para poder mostrar el dato o esconder el componente.
-        private fun checkDescriptionIsEmpty(description: String, descriptionTextView: TextView) {
+        private fun checkDescriptionIsEmpty(description: String) {
             if (description == "") {
-                descriptionTextView.visibility = View.GONE
+                binding.cvDescription.visibility = View.GONE
             } else {
-                descriptionTextView.text = description
+                binding.cvDescription.text = description
             }
         }
     }
 }
-

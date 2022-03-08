@@ -35,24 +35,20 @@ class DaysSinceView : Fragment() {
         EventApp.getDB().eventDao().showSinceEvents()
             .observe(viewLifecycleOwner, Observer { event ->
                 if (event.isEmpty()) {
-                    view?.findNavController()?.navigate(R.id.action_daysSinceView_to_emptyEventsView)
+                    view?.findNavController()
+                        ?.navigate(R.id.action_daysSinceView_to_emptyEventsView)
                 } else {
-                    adapterSince = AdapterEventSince(event)
+                    adapterSince = AdapterEventSince(event) {
+                        //Pulsar en un evento y que te lleve a la pantalla EditEventView
+                        Log.v(
+                            Util.TAG_SHOW_EVENTSINCE,
+                            "Accediendo a la pantalla EditEventView.."
+                        )
+                        val intent = Intent(context, EditEventView::class.java)
+                        intent.putExtra("KEY", it)
+                        startActivity(intent)
+                    }
                     binding.rvDaysSince.adapter = adapterSince
-
-                    //Pulsar en un evento y que te lleve a la pantalla EditEventView
-                    adapterSince.setOnItemClickListener(object :
-                        AdapterEventSince.OnItemClickListener {
-                        override fun onItemClick(position: Int) {
-                            Log.v(
-                                Util.TAG_SHOW_EVENTSINCE,
-                                "Accediendo a la pantalla EditEventView.."
-                            )
-                            val intent = Intent(context, EditEventView::class.java)
-                            intent.putExtra("KEY", event[position])
-                            startActivity(intent)
-                        }
-                    })
                 }
             })
 

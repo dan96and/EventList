@@ -21,7 +21,6 @@ class DaysUntilView : Fragment() {
 
     private var _binding: FragmentDaysUntilBinding? = null
     private val binding get() = _binding!!
-    //private val presenter = EventUntilPresenter(this)
     private lateinit var adapterUtil: AdapterEventUntil
 
     override fun onCreateView(
@@ -36,25 +35,20 @@ class DaysUntilView : Fragment() {
         EventApp.getDB().eventDao().showUntilEvents()
             .observe(viewLifecycleOwner, Observer { event ->
                 if (event.isEmpty()) {
-                    view?.findNavController()?.navigate(R.id.action_daysUntilView_to_emptyEventsView)
-
+                    view?.findNavController()
+                        ?.navigate(R.id.action_daysUntilView_to_emptyEventsView)
                 } else {
-                    adapterUtil = AdapterEventUntil(event)
+                    adapterUtil = AdapterEventUntil(event) {
+                        //Pulsar en un evento y que te lleve a la pantalla EditEventView
+                        Log.v(
+                            Util.TAG_SHOW_EVENTSINCE,
+                            "Accediendo a la pantalla EditEventView.."
+                        )
+                        val intent = Intent(context, EditEventView::class.java)
+                        intent.putExtra("KEY", it)
+                        startActivity(intent)
+                    }
                     binding.rvDaysUntil.adapter = adapterUtil
-
-                    //Pulsar en un evento y que te lleve a la pantalla EditEventView
-                    adapterUtil.setOnItemClickListener(object :
-                        AdapterEventUntil.OnItemClickListener {
-                        override fun onItemClick(position: Int) {
-                            Log.v(
-                                Util.TAG_SHOW_EVENTSINCE,
-                                "Accediendo a la pantalla EditEventView.."
-                            )
-                            val intent = Intent(context, EditEventView::class.java)
-                            intent.putExtra("KEY", event[position])
-                            startActivity(intent)
-                        }
-                    })
                 }
             })
 

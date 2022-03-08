@@ -7,16 +7,15 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
-import danieland.eventlist.R
 import com.danieland.eventlist.database.entities.Event
 import com.danieland.eventlist.extensions.toast
 import com.danieland.eventlist.interfaces.EditEventInterface
 import com.danieland.eventlist.presenter.EditEventPresenter
 import com.danieland.eventlist.util.Util
 import com.danieland.eventlist.view.fragments.DataPickerFragment
+import danieland.eventlist.R
 import danieland.eventlist.databinding.ActivityEditEventBinding
 import java.util.*
 
@@ -29,10 +28,10 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     private lateinit var dateSelect: Date
     private val dateCurrent: Date = Util.sdf.parse(Util.currentDate)
 
-    private lateinit var dialog : Dialog
-    private lateinit var btnCancel : Button
-    private lateinit var btnDeleteEvent : Button
-    private lateinit var event : Event
+    private lateinit var dialog: Dialog
+    private lateinit var btnCancel: Button
+    private lateinit var btnDeleteEvent: Button
+    private lateinit var event: Event
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +50,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
                 Event(
                     name = binding.etName.text.toString().trim(),
                     description = binding.etDescription.text.toString().trim(),
-                    date= binding.etDate.text.toString().trim(),
+                    date = binding.etDate.text.toString().trim(),
                     typeEvent = checkTypeEvent(),
                     notification = Util.checkValueSwitchNotification(binding.switchNotification.isChecked),
                     idEvent = event.idEvent
@@ -81,17 +80,19 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
         //Eliminar un evento
         binding.btnDeleteEvent.setOnClickListener {
-           showDialog()
+            showDialog()
         }
     }
 
     //Poner la informacion del evento seleccionado en el recyclerview en los campos de la pantalla
     private fun setDataFields() {
         val event = intent.extras!!.getSerializable("KEY") as Event
-        binding.etDate.setText(event!!.date)
-        binding.etName.setText(event.name)
-        binding.etDescription.setText(event.description)
-        binding.switchNotification.isChecked = event.notification
+        with(binding) {
+            etDate.setText(event.date)
+            etName.setText(event.name)
+            etDescription.setText(event.description)
+            switchNotification.isChecked = event.notification
+        }
     }
 
     //CHECKS
@@ -130,7 +131,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
     }
 
     //Metodos para mostrar el alertDialog
-    private fun showDialog(){
+    private fun showDialog() {
         dialog = Dialog(this)
         dialog.setContentView(R.layout.fragment_dialog_delete_event_view)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
