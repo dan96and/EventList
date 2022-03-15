@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.danieland.eventlist.extensions.openActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import danieland.eventlist.R
 import danieland.eventlist.databinding.ActivityHomeViewBinding
 
@@ -17,6 +19,12 @@ class HomeView : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeViewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Banner anuncios
+        MobileAds.initialize(this) {
+            val adRequest = AdRequest.Builder().build()
+            binding.bannerAd.loadAd(adRequest)
+        }
 
         //BottomNavMenu
         setupBottomNavMenu()

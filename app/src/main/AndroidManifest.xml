@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+
         android:name="com.danieland.eventlist.objects.EventApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EventList"
         tools:replace="android:icon">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6045873404872129~8989734434"/>
+
         <activity
             android:name="com.danieland.eventlist.view.activities.SplashScreenView"
             android:exported="true"
@@ -36,5 +41,4 @@
             android:name="com.danieland.eventlist.view.activities.HomeView"
             android:exported="true" />
     </application>
-
 </manifest>

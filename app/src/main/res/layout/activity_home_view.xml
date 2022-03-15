@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -66,18 +67,29 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/bannerAd"
         app:layout_constraintEnd_toEndOf="@id/guidelineRight"
         app:layout_constraintStart_toStartOf="@id/guidelineLeft"
         app:layout_constraintTop_toBottomOf="@+id/containerTop"
         app:navGraph="@navigation/nav_bottom_navigation_view" />
 
+    <com.google.android.gms.ads.AdView
+        android:paddingBottom="8dp"
+        android:id="@+id/bannerAd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        ads:adUnitId="ca-app-pub-6045873404872129/6714924887"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:theme="@style/Widget.BottomNavigationView"
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:background="@color/black"
+        android:theme="@style/Widget.BottomNavigationView"
         app:elevation="10dp"
         app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
         app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
