@@ -10,6 +10,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.danieland.eventlist.database.entities.Event
+import com.danieland.eventlist.extensions.openActivity
 import com.danieland.eventlist.extensions.toast
 import com.danieland.eventlist.interfaces.EditEventInterface
 import com.danieland.eventlist.presenter.EditEventPresenter
@@ -76,6 +77,7 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
         //Botón Cancelar de la pantalla
         binding.btnCancel.setOnClickListener {
             finish()
+            openActivity(HomeView::class.java)
         }
 
         //Eliminar un evento
@@ -127,7 +129,14 @@ class EditEventView : AppCompatActivity(), EditEventInterface.EditEventView {
 
     override fun showDialogDeleteEventSuccesfull(message: String) {
         toast(message)
+        openActivity(HomeView::class.java)
         finish()
+    }
+
+    override fun onBackPressed() {
+        openActivity(HomeView::class.java)
+        finish()
+        super.onBackPressed()
     }
 
     //Metodos para mostrar el alertDialog

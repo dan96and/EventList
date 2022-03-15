@@ -7,21 +7,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.danieland.eventlist.adapters.AdapterEventSince
-import com.danieland.eventlist.objects.EventApp
+import com.danieland.eventlist.database.entities.Event
+import com.danieland.eventlist.interfaces.DaysSinceInterface
+import com.danieland.eventlist.presenter.DaysSincePresenter
 import com.danieland.eventlist.util.Util
 import com.danieland.eventlist.view.activities.EditEventView
 import danieland.eventlist.R
 import danieland.eventlist.databinding.FragmentDaysSinceBinding
 
-class DaysSinceView : Fragment() {
+class DaysSinceView : Fragment(), DaysSinceInterface.DaysSinceView {
 
     private var _binding: FragmentDaysSinceBinding? = null
-    private lateinit var adapterSince: AdapterEventSince
     private val binding get() = _binding!!
+    private lateinit var adapterSince: AdapterEventSince
+    private val presenter = DaysSincePresenter(this)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,30 +31,29 @@ class DaysSinceView : Fragment() {
     ): View {
         _binding = FragmentDaysSinceBinding.inflate(inflater, container, false)
 
-        binding.rvDaysSince.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        binding.rvDaysSince.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
-        EventApp.getDB().eventDao().showSinceEvents()
-            .observe(viewLifecycleOwner, Observer { event ->
-                if (event.isEmpty()) {
-                    view?.findNavController()
-                        ?.navigate(R.id.action_daysSinceView_to_emptyEventsView)
-                } else {
-                    adapterSince = AdapterEventSince(event) {
-                        //Pulsar en un evento y que te lleve a la pantalla EditEventView
-                        Log.v(
-                            Util.TAG_SHOW_EVENTSINCE,
-                            "Accediendo a la pantalla EditEventView.."
-                        )
-                        val intent = Intent(context, EditEventView::class.java)
-                        intent.putExtra("KEY", it)
-                        startActivity(intent)
-                    }
-                    binding.rvDaysSince.adapter = adapterSince
-                }
-            })
+        Log.v(Util.TAG_SHOW_EVENTSINCE, "Accediendo al presenter para hacer la peticion..")
+        presenter.getItems()
 
         return binding.root
+    }
+
+    override fun showEvents(listEvent: List<Event>) {
+        adapterSince = AdapterEventSince(listEvent) {
+            //Pulsar en un evento y que te lleve a la pantalla EditEventView
+            Log.v(Util.TAG_SHOW_EVENTSINCE, "Accediendo a la pantalla EditEventView..")
+            val intent = Intent(context, EditEventView::class.java)
+            intent.putExtra("KEY", it)
+            startActivity(intent)
+            activity?.finish()
+        }
+        binding.rvDaysSince.adapter = adapterSince
+    }
+
+    override fun showEmptyEvents() {
+        view?.findNavController()
+            ?.navigate(R.id.action_daysSinceView_to_emptyEventsView)
     }
 
     override fun onDestroyView() {

@@ -1,7 +1,8 @@
 package com.danieland.eventlist.database.dao
 
-import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
 import com.danieland.eventlist.database.entities.Event
 
 @Dao
@@ -13,10 +14,10 @@ interface EventDao {
     fun deleteEvent(id: Int)
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventSince' AND deleteEvent = 0 ")
-    fun showSinceEvents(): LiveData<List<Event>>
+    fun showSinceEvents(): List<Event>
 
     @Query("SELECT * FROM Events WHERE typeEvent = 'EventUntil' AND deleteEvent = 0 ")
-    fun showUntilEvents(): LiveData<List<Event>>
+    fun showUntilEvents(): List<Event>
 
     @Query("SELECT * FROM Events")
     fun showAllEvents(): List<Event>

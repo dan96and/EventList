@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class EditEventInteractor(val presenter: EditEventPresenter) :
+class EditEventInteractor(private val presenter: EditEventPresenter) :
     EditEventInterface.EditEventInteractor {
 
     override fun uploadChangesEvent(event: Event) {
@@ -36,10 +36,9 @@ class EditEventInteractor(val presenter: EditEventPresenter) :
 
     override fun deleteEventSqlite(idEvent: Int) {
         CoroutineScope(Dispatchers.Main).launch {
-            withContext(Dispatchers.IO){ EventApp.getDB().eventDao().deleteEvent(idEvent)}
+            withContext(Dispatchers.IO) { EventApp.getDB().eventDao().deleteEvent(idEvent) }
+            Log.v(Util.TAG_SHOW_DELETEEVENT, "Evento eliminado, comunicando con el presenter..")
+            presenter.deleteEventSuccesfull()
         }
-        Log.v(Util.TAG_SHOW_DELETEEVENT, "Evento eliminado, comunicando con el presenter..")
-        presenter.deleteEventSuccesfull()
-
     }
 }
